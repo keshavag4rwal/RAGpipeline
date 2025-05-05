@@ -1,0 +1,3781 @@
+[00:00:05.70] Professor:  Hello everyone and welcome back.
+[00:00:08.44] Professor:  In the previous session we learnt about the instruction types which involve the not logic.
+[00:00:10.00] Slide Text: Microprocessors
+and
+Microcontrollers
+
+’ Instruction Types:
+CMP R and CPI d8
+[00:00:15.34] Professor:  In this session we are going to learn about some new instruction types starting with CMPR
+[00:00:20.00] Slide Text: Microprocessors
+and
+Microcontrollers
+
+Instruction Types:
+CMP Rand CPI d8
+[00:00:21.76] Professor:  and CPID8.
+[00:00:23.50] Professor:  So without any further ado let's get to learning.
+[00:00:26.76] Professor:  Coming to the topics that we are going to cover in this session,
+[00:00:30.00] Slide Text: Gg Topics
+Sy
+[00:00:30.56] Professor:  at first we will try and understand the compare operation.
+[00:00:34.98] Professor:  Thereafter we will learn about the first instruction type of the day CMPR.
+[00:00:40.00] Slide Text: @ Topics
+
+O Compare Operation
+
+DO Instruction Type: CMP R
+®
+[00:00:40.24] Professor:  And finally we will conclude our session by learning about the instruction type CPID8.
+[00:00:47.16] Professor:  So let's begin with the compare operation.
+[00:00:50.00] Slide Text: Gg Topics
+
+O Compare Operation,
+[00:00:50.82] Professor:  Now coming to the compare operation, this is performed using the operator minus or in other words subtraction.
+[00:00:59.98] Professor:  So from the first up trend if we subtract the second up trend,
+[00:01:00.00] Slide Text: Compare Operation Fi 63 ©  snesoacademy
+
+Opl Minus Op2
+.
+[00:01:04.14] Professor:  we will come to know about three different situations.
+[00:01:07.42] Professor:  First if the result is zero that will mean both the up trends are of the same value.
+[00:01:10.00] Slide Text: Compare Operation
+
+Op! Minus Op2
+
+°
+[00:01:14.16] Professor:  Secondly if the result is a positive value,
+[00:01:17.38] Professor:  it will prove that the up trend one is greater than up trend two.
+[00:01:20.00] Slide Text: Compare Operation
+
+Op! Minus Op2
+Sd
+[00:01:22.58] Professor:  However if the result is a negative value that will mean up trend two is greater than up trend one.
+[00:01:30.00] Slide Text: Compare Operation
+
+Op! Minus Op2
+e
+[00:01:30.50] Professor:  Now the question is when this operation will be performed,
+[00:01:34.50] Professor:  how we are going to provide the up trends to the microprocessor?
+[00:01:38.82] Professor:  Well from the previous sessions you already know this,
+[00:01:40.00] Slide Text: Compare Operation
+
+Op! Minus Op2
+
+*
+[00:01:42.38] Professor:  the first up trend will definitely reside inside the accumulator.
+[00:01:46.64] Professor:  What about the second up trend?
+[00:01:49.16] Professor:  For this we have three different ways.
+[00:01:50.00] Slide Text: Compare Operation
+
+Op! Minus Op2 '
+»
+‘
+
+A F
+
+8 Cc
+
+0 E
+
+H L
+
++ Bbits © + B bits &
+
+Ono teammen s Yew of BOBS
+[00:01:52.50] Professor:  At first it can be the contents of any of the GPRs,
+[00:01:56.32] Professor:  that is any of these registers BCDEH and L.
+[00:02:00.00] Slide Text: Compare Operation
+
+Op! Minus Op2 '
+¥ Contents of the GPR(s). ‘ ;
+A. F
+8 Cc
+ie) E
+H L
+
+= Bbits © « B bits &
+
+poaeammen > ew OF BOBS
+[00:02:01.26] Professor:  The up trend two can also be the contents of the memory location
+[00:02:05.64] Professor:  which will be pointed by the HL register pair.
+[00:02:08.80] Professor:  We are basically talking about the memory location,
+[00:02:10.00] Slide Text: Compare Operation
+
+Op! Minus Op2
+
+Y Contents of the GPR(s).
+
+¥ Contents of memory location
+pointed by H-L pair.
+
+= Bbits © + B bits &
+
+roe
+
+sven of BOBS
+[00:02:12.32] Professor:  which is generally referred to as capital M in our instructions.
+[00:02:17.44] Professor:  And we already know that false under the register indirect addressing mode,
+[00:02:20.00] Slide Text: Compare Operation
+
+Op! Minus Op2
+
+Y¥ Contents of the GPR(s).
+
+¥ Contents of memory location
+pointed by H-L pair.
+
+= Bbits © + B bits &
+
+noe
+
+ven of BOBS
+[00:02:22.12] Professor:  that is the memory location is going to be pointed by the HL register pair,
+[00:02:27.52] Professor:  which will not be mentioned directly in the instruction.
+[00:02:30.00] Slide Text: Compare Operation
+
+Op! Minus Op2
+
+Y¥ Contents of the GPR(s).
+
+¥ Contents of memory location
+pointed by H-L pair.
+
+= Bbits © «+ B bits &
+
+roe
+
+lim mer
+
+seu of BOBS
+[00:02:31.40] Professor:  Only by mentioning M, we are letting the microprocessor know
+[00:02:35.78] Professor:  that the memory location we are referring to currently is being pointed by the HL register pair.
+[00:02:40.00] Slide Text: Compare Operation
+
+Op! Minus Op2
+
+¥ Contents of the GPR(s).
+
+¥ Contents of memory location
+pointed by H-L pair.
+
+»
+
+= Bbits © « B bits &
+
+Cyt ammer
+
+vee of BOBS
+[00:02:42.28] Professor:  Coming to the third way, you already know,
+[00:02:45.34] Professor:  we can also send the second up trend to the microprocessor
+[00:02:48.72] Professor:  via the instruction itself as an 8 bit immediate data.
+[00:02:50.00] Slide Text: Compare Operation
+
+Op! Minus Op2
+
+¥ Contents of the GPR(s).
+
+¥ Contents of memory location
+pointed by H-L pair.
+
+Y 8-bit immediate data.
+
+»
+
+wee ene
+
+= Bbits © + B bits &
+
+ro
+
+lm mer
+
+2 eu of BOBS
+[00:02:53.72] Professor:  Now this is the way we are going to provide the up trends to the microprocessor.
+[00:02:59.42] Professor:  But what about the result?
+[00:03:00.00] Slide Text: Compare Operation
+
+Op! Minus Op2
+
+Y Contents of the GPR(s).
+
+¥ Contents of memory location
+pointed by H-L pair.
+
+¥ 8-bit immediate data.
+
++ Bbits © + B bits &
+
+ror
+
+of eu Of BOBS
+[00:03:02.02] Professor:  Are we going to store the result back to the accumulator?
+[00:03:05.76] Professor:  Well this time we are not going to do that.
+[00:03:09.50] Professor:  And why we can't do that?
+[00:03:10.00] Slide Text: Compare Operation
+
+Op! Minus Op2
+
+Y Contents of the GPR(s).
+
+¥ Contents of memory location
+pointed by H-L pair.
+
+¥ 8-bit immediate data.
+
+moe lee
+
+= Bbits © + B bits &
+
+Opn amemer
+
+cif eu of BORS
+[00:03:11.56] Professor:  Because if you notice, this is compare operation,
+[00:03:15.64] Professor:  which is actually going to compare to different operands.
+[00:03:19.68] Professor:  Although we are taking help from the minus or subtraction operation,
+[00:03:20.00] Slide Text: Compare Operation
+
+Op! Minus Op2
+»
+Y Contents of the GPR(s).
+¥ Contents of memory location
+
+pointed by H-L pair.
+
+¥ 8-bit immediate data.
+
+moe lee
+
+= Bbits © * B bits &
+
+Opin am mer
+
+seu of BOBS
+[00:03:24.44] Professor:  however, our goal is to just compare,
+[00:03:27.12] Professor:  not to change the values.
+[00:03:30.00] Slide Text: Compare Operation
+
+Op! Minus Op2
+»
+
+Y Contents of the GPR(s).
+
+¥ Contents of memory location
+pointed by H-L pair.
+
+J 8-bit immediate data.
+
+wollte
+
++ Bbits © «* B bits &
+
+Ope tnimmer
+
+cee of BOBS
+[00:03:30.34] Professor:  And for that, we are going to use some other register,
+[00:03:34.24] Professor:  which we have seen already, while we were learning about the register section of 8085 microprocessor.
+[00:03:40.00] Slide Text: Compare Operation
+Recap
+Registers of 8085 ,:P
+~ Register Section
+1 Registers Accessible to Programmers:
+t General Purpose Registers (8-bit)
+B, C, D, E, H, L
+u Special Purpose Registers
+@ 8-bit: Accumulator, Status/Flags Register
+@ 16-bit: Program Counter, Stack Pointer
+
+2 Registers Inaccessible to Programmers:
+
+( Begaters
+
+Arthmete & Loge
+en)
+
+Taming & Control
+Una
+
+Memory Address Register(16-bit), Temporary Registers
+
+mae nem az
+[00:03:41.02] Professor:  If you remember, we also talked about the registers,
+[00:03:44.24] Professor:  which were inaccessible to the programmers.
+[00:03:47.34] Professor:  During data transfer between memory and the microprocessor,
+[00:03:50.00] Slide Text: Compare Operation
+
+Recaay
+Registers of 8085 p:P
+~ Register Section «Reames
+1 Registers Accessible to Programmers: , Anthmene & Logue
+« General Purpose Registers (8-bit) . _
+B,C, BD, E,H,L Teng & Control
+
+i Special Purpose Registers
+¢ 8-bit: Accumulator, Stotus/Flags Register
+e 16-bit: Program Counter, Stack Pointer
+2 Registers Inaccessible to Programmers:
+
+Memory Address Register(l6-bit), Temporary Registers
+
+.
+
+eA ae
+[00:03:50.88] Professor:  we made use of the MAR or the memory address register.
+[00:03:54.44] Professor:  But in this case, we are going to use one of the temporary registers.
+[00:04:00.00] Slide Text: Compare Operation
+Recap
+Registers of 8085 y:P
+~ Register Section
+1 Registers Accessible to Programmers:
+« General Purpose Registers (8-bit)
+B, C, D, E, H, L
+i Special Purpose Registers
+¢ 8-bit: Accumulator, Status/Flags Register
+@ 16-bit: Program Counter, Stack Pointer
+
+2 Registers Inaccessible to Programmers:
+
+& Regaters
+
+Arthmete & Logue
+Une
+
+Taming & Contrel
+Uae
+
+Memory Address Register(l6-bit), Temporary Registers
+s
+
+ee ee ae
+[00:04:00.10] Professor:  And noted, we are going to use the temporary register, which is of 8 bits.
+[00:04:06.40] Professor:  There are several temporary registers in the domain of 8085 microprocessor.
+[00:04:10.00] Slide Text: Compare Operation
+hecapy
+Registers of 8085 p:P
+~ Register Section
+1 Registers Accessible to Programmers:
+t General Purpose Registers (8-bit)
+B, C, D, E, H, L
+u Special Purpose Registers
+¢ 8-bit: Accumulator, Stotus/Flags Register
+¢ 16-bit: Program Counter, Stack Pointer
+
+2 Registers Inaccessible to Programmers:
+
+( Regaters
+
+Anahmete & Lage
+Une
+
+Taming & Contre!
+aut
+
+Memory Address Register(16-bit), Temporary Registers
+
+A ae
+
+*
+[00:04:11.74] Professor:  We are going to learn about them as needed in our later sections.
+[00:04:16.56] Professor:  Anyway, for now, just remember,
+[00:04:19.38] Professor:  when the compare operation is performed using the help of the subtraction operation,
+[00:04:20.00] Slide Text: Compare Operation
+heady
+Registers of 8085 ,:P
+~ Register Section
+1 Registers Accessible to Programmers:
+« General Purpose Registers (8-bit)
+B, C, D, E, H, Lb
+u Special Purpose Registers
+¢ 8-bit: Accumulator, Status/Flags Register
+@ 16-bit: Program Counter, Stack Pointer
+
+2 Registers Inaccessible to Programmers:
+
+( Begatens
+
+Arthmene & Logie
+Uns
+
+Taming & Control
+Unt
+
+Memory Address Register(16-bit), Temporary Registers
+
+eA ee ae
+[00:04:24.92] Professor:  the results are going to be updated in a temporary register, which is of 8 bits.
+[00:04:30.00] Slide Text: Compare Operation
+Recap
+Registers of 8085 p:P
+~ Register Section
+1 Registers Accessible to Programmers:
+t General Purpose Registers (8-bit)
+B,C, D, E, H, b
+i Special Purpose Registers
+e 8-bit: Accumulator, Status/Flags Register
+e 16-bit: Program Counter, Stack Pointer
+
+2 Registers Inaccessible to Programmers:
+
+( Regaters
+
+Arthmeta & Logie
+nw
+
+Taming & Contrel
+Uns
+
+Memory Address Register(16-bit), Temporary Registers
+
+mae nem aze
+[00:04:31.38] Professor:  Now, let me provide you an illustration to understand the compare operation in a detailed manner.
+[00:04:38.30] Professor:  Say we are going to measure the height of 2 people.
+[00:04:40.00] Slide Text: Compare Operation
+[00:04:42.34] Professor:  This is Person 1 and this is Person 2.
+[00:04:46.38] Professor:  If we measure their heights using the scale or the ruler,
+[00:04:50.00] Slide Text: Compare Operation
+[00:04:50.12] Professor:  there can be three different outcomes.
+[00:04:53.06] Professor:  If the height of the Person 1 is same as the Person 2,
+[00:04:57.62] Professor:  which will be dictated by this ruler, then we can say both are of same height.
+[00:05:00.00] Slide Text: Compare Operation
+[00:05:03.56] Professor:  On the other hand, if the Person 1 has higher height than the Person 2,
+[00:05:09.62] Professor:  we can say Person 1 is taller.
+[00:05:10.00] Slide Text: Compare Operation
+
+~ Both are of same height.
+[00:05:13.50] Professor:  And finally, if the Person 2, that is this Person, happens to be taller than the Person 1,
+[00:05:20.00] Slide Text: Compare Operation
+
+Person] Person 2
+
+~ Both are of same height.
+~ Person 1 is taller.
+[00:05:20.46] Professor:  in that case, we can state the outcome as Person 1 is shorter.
+[00:05:25.84] Professor:  Notice one thing, when we are going to measure the heights,
+[00:05:29.80] Professor:  we are going to do that using the ruler.
+[00:05:30.00] Slide Text: Compare Operation
+
+~ Both are of same height.
+~ Person 1 is taller.
+
+~ Person 1 is shorter.
+[00:05:32.74] Professor:  Coming to the outcome, whatever the outcome is,
+[00:05:36.34] Professor:  it will not change any of their heights.
+[00:05:39.96] Professor:  And this is the reason why we are not updating the result inside the accumulator.
+[00:05:40.00] Slide Text: Compare Operation
+
+~ Both are of same height.
+~ Person 1 is taller.
+
+~ Person 1 is shorter.
+[00:05:45.74] Professor:  Because if you think about it, say the height of the Person 1,
+[00:05:49.58] Professor:  we stored inside the accumulator and the height of the Person 2,
+[00:05:50.00] Slide Text: Compare Operation
+
+~ Both are of same height.
+~ Person 1 is taller.
+
+~ Person 1 is shorter.
+[00:05:53.44] Professor:  we stored in one of the GPRs.
+[00:05:56.02] Professor:  Now after performing the subtraction, in order to compare their heights,
+[00:06:00.00] Slide Text: Compare Operation
+. Person 2
+
+Person 4
+
+~ Both are of same height.
+~ Person 1 is taller.
+
+~ Person 1 is shorter.
+[00:06:01.32] Professor:  if we update the result into the location where the height of the Person 1 has been kept,
+[00:06:07.02] Professor:  that will evidently change the height of the Person.
+[00:06:10.00] Slide Text: Compare Operation
+
+Person 4 Person 2
+
+~ Both are of same height.
+~ Person 1 is taller.
+
+~ Person 1 is shorter.
+[00:06:10.78] Professor:  Now do we really want that?
+[00:06:12.74] Professor:  No, right?
+[00:06:14.40] Professor:  We want to know the difference, but at the same time, we don't want to alter the values.
+[00:06:20.00] Slide Text: Compare Operation
+
+Person] Person 2
+
+~ Both are of same height.
+~ Person 1 is taller.
+
+~ Person 1 is shorter.
+[00:06:21.06] Professor:  So this is why we stored the result inside the Temporary Register.
+[00:06:26.26] Professor:  So do remember, there are three outcomes of the Compare operation.
+[00:06:30.00] Slide Text: Compare Operation
+*
+
+Percan
+
+Person 2
+
+~ Both are of same height.
+~ Person 1 is taller.
+
+~ Person 1 is shorter.
+[00:06:31.26] Professor:  Either both the values will be same, or one of the values will be greater,
+[00:06:35.44] Professor:  or the value which we have been referring to is going to be smaller.
+[00:06:40.00] Slide Text: Compare Operation
+Percon 2
+
+Person]
+
+~ Both are of same height.
+~ Person 1 is taller.
+
+~ Person 1 is shorter,
+[00:06:41.10] Professor:  So that was all about the basics of Compare operation.
+[00:06:45.12] Professor:  Let's now focus on the instruction type, cmpr.
+[00:06:49.70] Professor:  Coming to the instruction type cmpr, it stands for Compare Accumulator with R.
+[00:06:50.00] Slide Text: @ Topics
+¥
+O Instruction Type: CMP Ry
+[00:06:57.44] Professor:  Now if you notice the nemonic cmp, all these letters are coming from the Compare word itself.
+[00:07:00.00] Slide Text: Instruction Type: CMP R Ei ©  Snesoacademy
+
+e CoMPare Accumulator with R.
+[00:07:05.22] Professor:  So we are going to compare the Accumulator's value with R.
+[00:07:10.00] Slide Text: Instruction Type: CMP R
+
+© CoMPare Accumulator with R.
+*
+
+nen
+
+rc
+
+* Bbits & «+ Bbits =
+
+spies of GORE
+[00:07:10.76] Professor:  Now previously, after the operation, we generally used to update the Accumulator's content.
+[00:07:17.46] Professor:  But this time, we are going to update the result inside the Temporary Register, as I mentioned earlier.
+[00:07:20.00] Slide Text: instruction Type: CMP R
+
+© CoMPare Accumulator with R.
+
+mn
+
+rc
+
+«= &bits = + B bits &
+
+strimmer Doom of BOBS
+[00:07:24.48] Professor:  Now you tell me, how the Flags Register is going to be affected?
+[00:07:29.28] Professor:  Because in the previous cases, we have seen the update of the Accumulator Register affects the contents within the Flags Register.
+[00:07:30.00] Slide Text: Instruction Type: CMP R
+
+e CoMPare Accumulator with R.
+
+A F
+B c
+iB) E
+H L
+
+«= &bits = + BS bits &
+
+Sacer: how of BOBS
+[00:07:38.56] Professor:  But this time, we are storing the result in the Temporary Register, right?
+[00:07:40.00] Slide Text: Instruction Type: CMP R
+
+e CoMPare Accumulator with R.
+
+poe
+
+nn
+
+rc
+
+= Bbis = * Obits =
+
+semen > low of BOBS
+[00:07:43.88] Professor:  So for this instruction type, after the operation has been executed, the Flags are to be affected based on the Temporary Register's content.
+[00:07:50.00] Slide Text: Instruction Type: CMP R
+© CoMPare Accumulator with R.
+
+e Flags are affected based on the Temporary Registers content.
+®
+
+A F
+B c
+0 E
+H L
+
+= Bbits = «+ B bits »
+
+strimmer ew of BOBS
+[00:07:55.06] Professor:  Do remember, since we are storing the result inside the Temporary Register, therefore, this Register's content is going to affect the Flags Register's content.
+[00:08:00.00] Slide Text: Instruction Type: CMP R
+e CoMPare Accumulator with R.
+
+e Flags are affected based on the Temporary Register’s content.
+*
+
+A F
+B c
+is) E
+H L
+
+= Bbits = «+ Bbits »
+
+Sermons few of BOBS
+[00:08:05.90] Professor:  Now coming to the instruction type cmpr, it falls under the one by the long instructions category.
+[00:08:10.00] Slide Text: Instruction Type: CMP R
+e CoMPare Accumulator with R.
+
+e Flags are affected based on the Temporary Registers content.
+
+CMP R | A c
+B Cc
+is) E
+H L
+
+= Bbits = «+ Bbits =
+
+Spe trimmen frm of BOBS
+[00:08:13.30] Professor:  Now if we talk about the different instructions of this instruction type, you already know, we are mentioning capital R in the instruction itself.
+[00:08:20.00] Slide Text: Instruction Type: CMP R
+e CoMPare Accumulator with R.
+
+e Flags are affected based on the Temporary Registers content.
+
+8 Cc
+ie) E
+H L
+
+= Obits = «+ B bits »
+
+Section: few of BOBS
+[00:08:21.90] Professor:  So the instructions are going to be cmpa. Basically, we are going to compare the contents of the Accumulator with the Accumulator itself.
+[00:08:30.00] Slide Text: Instruction Type: CMP R
+e CoMPare Accumulator with R.
+
+e Flags are affected based on the Temporary Register’s content.
+
+CMP R: CMP A A F
+B c
+
+. D E
+
+H L
+
+= Obits = «+ B bits »
+
+strimmer sow of BOBS
+[00:08:32.74] Professor:  The next instructions are going to be cmpb, cd, e, h, and l. Like I mentioned earlier, all the different general purpose registers can also be the source of the second operand.
+[00:08:40.00] Slide Text: Instruction Type: CMP R
+e CoMPare Accumulator with R.
+
+e Flags are affected based on the Temporary Registers content.
+
+CMP R: CMP A
+CMP B . A F
+CMP C
+CMP D 8 C
+CMP E D E
+CMP H
+CMP L H L
+
+= Obits = «+ B bits »
+
+strimmer: en of BORS
+[00:08:45.64] Professor:  And along with these, the last instruction is going to be cmpm, the memory location which will be pointed by the HL Register pair.
+[00:08:50.00] Slide Text: Instruction Type: CMP R
+e CoMPare Accumulator with R.
+
+e Flags are affected based on the Temporary Registers content.
+
+CMP R: CMP
+CMP
+CMP
+CMP
+CMP
+CMP
+CMP
+CMP
+
+*
+
+Sr-rImMoneyp
+
+« &bits = + B bits &
+
+pr immer 2 6a of BORS
+[00:08:56.80] Professor:  So using the instruction type cmpr, we are actually handling the first two cases where we are going to provide the second operand to the microprocessor via any of these registers or the memory location pointed by the HL Register pair.
+[00:09:00.00] Slide Text: Instruction Type: CMP R
+e CoMPare Accumulator with R.
+
+e Flags are affected based on the Temporary Registers content.
+
+CMP R: CMP A
+CMP B A F
+CMP C
+CMP D 8 ¢
+CMP E fo) E
+CMP H
+CMP L H L
+CMP M « Bbis © + bbe
+
+Spo trimmer sow of BOBS
+[00:09:10.00] Slide Text: Instruction Type: CMP R
+© CoMPare Accumulator with R.
+
+e Flags are affected based on the Temporary Register’s content.
+
+CMP R: CMP A
+CMP B A F
+CMP C
+CMP D 8 C
+CMP E b E
+CMP H
+CMP ty H L
+CMP M = Bois = = Bbus =
+
+strimmer’: en of BORS
+[00:09:14.88] Professor:  Now let me provide you some illustrations to understand how the instruction type cmpr is going to operate.
+[00:09:20.00] Slide Text: instruction Type: CMP R
+FS
+© CoMPare Accumulator with R.
+
+e Flags are affected based on the Temporary Register’s content.
+
+CMP R: CMP A
+CMP B A F
+CMP C
+CMP D 8 ¢
+CMP E D E
+CMP H
+CMP L H L
+CMP M = Bbis © «Obits ©
+
+pemimmer sen of BORS
+[00:09:22.88] Professor:  Say within the Accumulator register, we have got the first operand and in the general purpose register e, we are going to keep the second operand.
+[00:09:30.00] Slide Text: Instruction Type: CMP R
+e CoMPare Accumulator with R.
+
+e Flags are affected based on the Temporary Registers content.
+
+CMP R: CMP A
+CMP B A
+CMP C
+CMP D 8 Sf
+CMP E D i le
+CMP L H L
+CMP M = Bois © = Bbits =
+
+strimmer: oe of BORS
+[00:09:31.92] Professor:  Now for our illustration, since the second operand is being stored inside the e register, we are going to make use of the instruction cmpe.
+[00:09:40.00] Slide Text: instruction Type: CMP R
+
+© CoMPare Accumulator with R.
+
+e Flags are affected based on the Temporary Register’s content.
+
+CMP R: CMP
+CMP
+CMP
+CMP
+CMP
+CMP
+CMP.
+cue
+
+T-rmonw,Y
+
+M
+
+« &bits © + B bits &
+
+ce ae
+
+wow of BOBS
+[00:09:42.08] Professor:  Now as I mentioned earlier, whenever we are going to perform compare operation, there can be three situations, right?
+[00:09:49.94] Professor:  So we are going to observe the situations one by one.
+[00:09:50.00] Slide Text: Instruction Type: CMP R
+e CoMPare Accumulator with R.
+
+e Flags are affected based on the Temporary Registers content.
+
+CMP R: CMP A
+CMP B A.
+CMP C
+CMP D ’ 8 Ss
+CMP E D “Je
+CMP H -
+CMP L H L
+CMP M = Bois © = Bbas =
+
+simmers fen of ORS
+[00:09:53.98] Professor:  Let's talk about the situation one. For this situation, say within the Accumulator register, we have kept the first operand which is f5.
+[00:10:00.00] Slide Text: Instruction Type: CMP R
+© CoMPare Accumulator with R.
+
+e Flags are affected based on the Temporary Register’s
+
+v Otuation Te
+
+rr G9 wep
+
+content.
+
+- mn
+
++ Sbits = + Bbits &
+
+Opa immer fo af BOBS
+[00:10:03.38] Professor:  And I told you earlier, the second operand we are going to keep in the general purpose register e, therefore say this time within the register e, we have kept the value 2-5.
+[00:10:10.00] Slide Text: Instruction Type: CMP R
+© CoMPare Accumulator with R.
+e Flags are affected based on the Temporary Register’s content.
+
+v Ctuation FP
+
+FS F
+
+rc Oo @B@ ,Y
+- «mm a
+
++ Sbits = + Bbits &
+
+Spore immer how of BOBS
+[00:10:14.36] Professor:  Now look at these two values. Both of them are hexadecimal values.
+[00:10:19.68] Professor:  Now if we talk about the least significant digits, these are the same.
+[00:10:20.00] Slide Text: Instruction Type: CMP R
+e CoMPare Accumulator with R.
+
+e Flags are affected based on the Temporary Register’s content.
+
+v OCtuation 4
+
+FS F
+
+25
+
+ro 7M »Y
+- man
+
++ Sbits = + Bbits &
+
+Opera men a af BOBS
+[00:10:24.28] Professor:  But if you consider the most significant digits, this is 2, whereas the content of the Accumulator has f in its most significant hexadecimal digit.
+[00:10:30.00] Slide Text: Instruction Type: CMP R
+© CoMPare Accumulator with R.
+
+e Flags are affected based on the Temporary Register’s content.
+
+v Otuation F
+
+F5
+
+ro wT }
+
+25
+
+- ma
+
++ Sbits = + Bbits &
+
+es a
+
+Vow of BOBS
+[00:10:34.28] Professor:  So clearly, we can say a is greater than e. But remember, this is us, the human beings.
+[00:10:40.00] Slide Text: Instruction Type: CMP R
+© CoMPare Accumulator with R.
+
+e Flags are affected based on the Temporary Register'’s content.
+
+v Otuaton 4D: ‘A »€}
+FS F
+
+25
+
+ro 7 Y
+- mF
+
++ &bits = + Bbits »
+
+Seta mers ow of BOBS
+[00:10:42.50] Professor:  We can look at the numbers and directly say which is greater, not the microprocessor.
+[00:10:49.44] Professor:  It will have to perform the operation f5h-25h. And then only it can determine whether the value within the Accumulator is greater than the value within the e register.
+[00:10:50.00] Slide Text: Instruction Type: CMP R
+e CoMPare Accumulator with R.
+
+e Flags are affected based on the Temporary Register’s content.
+
+wv Ctuation 1 (AE;
+
+F5 F
+
+25
+
+rr oO BRB Y
+- man
+
++ Sbits = + Bbits »
+
+Spore men > Sow of BOBS
+[00:11:00.00] Slide Text: Instruction Type: CMP R
+© CoMPare Accumulator with R.
+
+e Flags are affected based on the Temporary Register’s content.
+
+v Ctuation  Ar€}
+F5 F
+F 5H
+
+2 5H 95
+
+rr Oo B@ Y
+- mn
+
++ Sbits = + Bbits &
+
+Spear im mee ou of BOBS
+[00:11:03.30] Professor:  Let's now proceed ahead with the operation.
+[00:11:05.94] Professor:  If you remember in the previous sessions, I have already told you, in 8085 microprocessor, we don't really perform subtraction.
+[00:11:10.00] Slide Text: Instruction Type: CMP R
+e CoMPare Accumulator with R.
+
+e Flags are affected based on the Temporary Register’s content.
+
+w Otuation 1: Ar€}
+FS F
+Fo5H
+
+2 SH 25
+
+ro Bm Y
+- ms
+
+. + Bbits = * Bbits ©
+
+Spear mee ow of BOBS
+[00:11:14.74] Professor:  Rather, for the subcrahend, we find out the two complement in binary, or since we are dealing in hexadecimal in here, so we will find out the 16th complement of 2-5.
+[00:11:20.00] Slide Text: Instruction Type: CMP R
+e CoMPare Accumulator with R.
+
+e Flags are affected based on the Temporary Register’s content.
+
+wv Cituation t AE;
+FS F
+F 5H
+
+2 SH
+
+’ 25
+
+ro 7B Y
+- ms
+
++ &bits = + bits »
+
+Spt trimmers ow of BOBS
+[00:11:26.34] Professor:  And thereafter, we are going to perform addition. Isn't it?
+[00:11:30.00] Slide Text: Instruction Type: CMP R
+e CoMPare Accumulator with R.
+
+e Flags are affected based on the Temporary Register’s content.
+
+v Otuation 4D: ‘A Ej
+FS F
+F 5H
+
+.
+2 SH 95
+
+ro 72 Y
+- mF
+
++ Sbits = + Bbits &
+
+Spore immen how of BOBS
+[00:11:30.22] Professor:  Let's now find out the 16th complement of 2-5.
+[00:11:34.42] Professor:  Now if you think about it, we are supposed to subtract 5 from 1-0, which is 16 of decimal.
+[00:11:40.00] Slide Text: Instruction Type: CMP R
+e CoMPare Accumulator with R.
+
+e Flags are affected based on the Temporary Register’s content.
+v Ctuation 2 AE;
+
+F5 F
+FOSH
+
+25
+.
+
+ro @B@ Y
+- ms
+
++ Sbits = + Bbits &
+
+Opa men > naw of BOBS
+[00:11:42.36] Professor:  So 16-5 is 11, and 11 in hexadecimal is B. Right?
+[00:11:49.78] Professor:  Now coming to the most significant digit, that is 2, we are going to subtract it from f.
+[00:11:50.00] Slide Text: Instruction Type: CMP R
+© CoMPare Accumulator with R.
+
+e Flags are affected based on the Temporary Registers content.
+
+~ Ctuation 1 AE}
+FS F
+F 5H
+
+BH 95
+
+ro Bm Y
+- may
+
++ Sbits = + Bbits &
+
+Sperm men fea of BOBS
+[00:11:55.42] Professor:  Now f is 15, and 15-2 is 13, and in hexadecimal, 13 is represented using D.
+[00:12:00.00] Slide Text: Instruction Type: CMP R
+e CoMPare Accumulator with R.
+
+e Flags are affected based on the Temporary Registers content.
+
+v Otuation D SA»E}
+
+A FS F
+
+F SH B Cc
+
+BH D 25 2€
+5
+
+H L
+
++ Sbits = + Bbits ©
+
+pene men oa of BOBS
+[00:12:06.58] Professor:  So clearly, the 16th complement of 2-5 is Db.
+[00:12:10.00] Slide Text: Instruction Type: CMP R
+e CoMPare Accumulator with R.
+
+e Flags are affected based on the Temporary Registers content.
+
+v Otuaton FT ‘A 1E)
+F5 F
+FoSH
+
+D BH 95
+
+rr oO 7 Y
+- mF
+
++ Sbits = + Bbits &
+
+Cream mers Low of BOBS
+[00:12:12.54] Professor:  Since we have found out the 16th complement, now we can move ahead with the addition.
+[00:12:18.14] Professor:  So as you can see, we are adding 5 with B. Now B is 11 of decimal.
+[00:12:20.00] Slide Text: Instruction Type: CMP R
+e CoMPare Accumulator with R.
+
+e Flags are affected based on the Temporary Registers content.
+
+w Cituation 1 AE}
+FS F
+F SH
+
+rr Oo FB Y
+- mf
+
++ &bits = + Bbits »
+
+Oper am mee few of BOBS
+[00:12:26.14] Professor:  So adding 5 with 11, we will have the result 16.
+[00:12:30.00] Slide Text: Instruction Type: CMP R
+© CoMPare Accumulator with R.
+
+e Flags are affected based on the Temporary Register’s content.
+
+wv Ctuation t: (AE;
+F5 F
+F SH
+
++ D BH 95
+
+ro @B@ Y
+- myn
+
++ &bits = + bits &
+
+Cpe ne am men Sow of BOBS
+[00:12:31.04] Professor:  Now we already know 15 of decimal is f in hexadecimal.
+[00:12:37.00] Professor:  So what do you think will be 16? Well, we already know it. It is 1-0.
+[00:12:40.00] Slide Text: Instruction Type: CMP R
+© CoMPare Accumulator with R.
+
+e Flags are affected based on the Temporary Registers content.
+
+v Ctuation 1 AE}
+F5 F
+FoSH
+
++ D BH 95
+
+ro 7 ,Y
+- mf
+
++ Sbits = + Bbits &
+
+Opera mer fo of BOBS
+[00:12:43.42] Professor:  So we will have some as 0, and we will also have a carry that is 1.
+[00:12:48.30] Professor:  Now this one, if we add this with f, we will have 1-0.
+[00:12:50.00] Slide Text: Instruction Type: CMP R
+e CoMPare Accumulator with R.
+
+e Flags are affected based on the Temporary Registers content.
+
+v Otuaton FT LAE;
+
+1 A FS F
+RosH 8 c
+7 0 BH ) 25 «OE
+OH 4 L
+
++ &bits = + Bbits &
+
+Cpr ae imme oa af BOBS
+[00:12:53.74] Professor:  And I hope you remember the second shortcut that we learned while performing hexadecimal addition.
+[00:12:59.88] Professor:  With 1-0, if we add any symbol of hexadecimal, we will get the 2 digit hexadecimal value,
+[00:13:00.00] Slide Text: Instruction Type: CMP R
+© CoMPare Accumulator with R.
+
+e Flags are affected based on the Temporary Registers content.
+
+v Ctuation 1 /A>E;
+
+1 A FS F
+Fo5sH ° 8 C
++ D BH 5 SE
+OH 4 L
+
+« &bits = = Sbits =
+
+Optra mor lw Of BOBS
+[00:13:06.80] Professor:  where at the least significant digit, we will have the digit which we added with 1-0.
+[00:13:10.00] Slide Text: instruction Type: CMP R
+© CoMPare Accumulator with R.
+
+e Flags are affected based on the Temporary Register’s content.
+
+v Situation 1 ALE)
+
+1 A FS F
+Fo5H ° 8 C
++ D BH b os OE
+OH 4 L
+
++ Sbits = + Bbits &
+
+Spore ammen > few of BOBS
+[00:13:13.10] Professor:  And as the most significant digit, we will have 1.
+[00:13:16.50] Professor:  So with 1-0, we are adding D. So as the most significant digit, we are going to have 1.
+[00:13:20.00] Slide Text: instruction Type: CMP R
+e CoMPare Accumulator with R.
+
+e Flags are affected based on the Temporary Register’s content.
+
+w Ctuation 1 AE;
+
+1 A 65 F
+‘ 4 BH 7) 2 OE
+OH 4 L
+
++ &bits = + bits ©
+
+Cpa men's Low of BOBS
+[00:13:23.32] Professor:  And as the least significant digit, we will have D.
+[00:13:26.70] Professor:  Now notice, although through addition, we actually perform subtraction, and we generated a carry.
+[00:13:30.00] Slide Text: Instruction Type: CMP R
+e CoMPare Accumulator with R.
+e Flags are affected based on the Temporary Registers content.
+
+}
+
+A FS
+
++ D BH
+
+yy D 25
+1 D OH 4
+
+- mf
+
++ &bits = + Bbits ©
+
+Op sara mn Low Of BOBS
+[00:13:34.48] Professor:  So this carry will be fed to the carry flag via the inverter or the nodget.
+[00:13:40.00] Slide Text: Instruction Type: CMP R
+e CoMPare Accumulator with R.
+
+e Flags are affected based on the Temporary Registers content.
+
+1 ¥ A F5 F
+
+Ss 2 x AC x Pp x Cy
++ D BH D 8 CE
+1 D OH H L
+
++ &bits = + Bbits »
+
+param men Low Of BOBS
+[00:13:40.86] Professor:  So the carry flag is going to be reset to 0.
+[00:13:44.24] Professor:  On the other hand, while performing this, we actually generated a carry from the addition of the least significant digits.
+[00:13:50.00] Slide Text: Instruction Type: CMP R
+e CoMPare Accumulator with R.
+
+e Flags are affected based on the Temporary Register’s content.
+
+1 Y A F5 F
+§S Z x AC x P x Cy
++ D BH
+0 (3) 250C~*rE
+1 D OH H L
+
++ Sbits = + Bbits &
+
+ptr mers ow of BOBS
+[00:13:52.50] Professor:  So the auxiliary carry flag is going to be set.
+[00:13:55.96] Professor:  Now what will be the status of the rest of the flags? Well, for that, we need to judge the contents of the temporary race.
+[00:14:00.00] Slide Text: Instruction Type: CMP R
+e CoMPare Accumulator with R.
+
+e Flags are affected based on the Temporary Registers content.
+
+wv Otuation 4 LA»E;
+
+1 4 A F5 F
+FoO5H 7 8g c
+§S Z x AC x P x Cy
++ D BH
+a ] fe) D 25 E
+1 D OH H L
+* + &bits = + bits ©
+
+pena mon a of FORS
+[00:14:04.60] Professor:  So this time, within the temporary register, the 8 bits or these 2 digits of hexadecimal will be stored.
+[00:14:10.00] Slide Text: Instruction Type: CMP R
+© CoMPare Accumulator with R.
+
+e Flags are affected based on the Temporary Register’s content.
+
+v Otuation 4D LAE;
+
+1 y A FS
+S Zz AC P Cc
++ D BH * * soy b 0s
+—_—_—_— 1 (e)
+1 D OH 4
+e
+= Sbits = = Bbits &
+TR
+
+- mn
+
+Spr te im men ow of BOBS
+[00:14:13.58] Professor:  0 of hexadecimal is 4-0 in decimal, coming to D.
+[00:14:18.96] Professor:  D of hexadecimal is actually 13 of decimal, which in binary is 1101.
+[00:14:20.00] Slide Text: Instruction Type: CMP R
+
+© CoMPare Accumulator with R.
+
+e Flags are affected based on the Temporary Register’s content.
+
+v Otuaton 4D {A>E;
+
+5H
+BH
+OH
+
++
+
+9000
+TR
+
+x
+
+AC
+
+x
+
+y
+
+Cy
+
+F5 F
+
+25
+
+ro Bm ,Y
+- mn
+
++ Sbits = + Bbits &
+
+Cpe reammer > how of BOBS
+[00:14:26.36] Professor:  Now notice these 8 bits. The parity flag is going to be set.
+[00:14:30.00] Slide Text: Instruction Type: CMPR Ei [O] @nesoacademy
+e CoMPare Accumulator with R.
+
+e Flags are affected based on the Temporary Register’s content.
+
+wv Otuation 1: SAE}
+
+1 Yy A FS F
+FOS H 7 8 c
+S Z x AC x Po x C€
+7 PB BH } . ; D a
+1 D OH 4 L
+1101 0000 « Sbits = + bits ©
+TR
+
+Serta en sew af FORS
+[00:14:31.02] Professor:  If within the temporary register, we have got even number of ones.
+[00:14:37.04] Professor:  Observe 1, 2, 3.
+[00:14:39.82] Professor:  We have got 3 ones in here. Now 3 is not an even number. It's an odd number.
+[00:14:40.00] Slide Text: Instruction Type: CMP R
+
+© CoMPare Accumulator with R.
+
+e Flags are affected based on the Temporary Registers content.
+
+w Ctuation 1: Ax€}
+
+1
+F 5H
+S
++ D BH
+1 D OH
+1101 0000
+TR®
+
+F5 F
+
+25
+
+ro BM ,Y
+- myn
+
++ &bits = + Bbits »
+
+petra mer sw of BOBS
+[00:14:46.68] Professor:  So what will be the status of the parity flag? Yes, you guessed it right. It will be reset to 0.
+[00:14:50.00] Slide Text: Instruction Type: CMP R
+
+© CoMPare Accumulator with R.
+
+e Flags are affected based on the Temporary Register’s content.
+
+w~ Ctuatioen 1: Ar€}
+
+1
+FO5H
+S
++ D BH
+1} D OH
+1101 0000
+TR
+
+F5
+
+rr oO Vw }
+
+25
+
+- mn
+
++ Sbits = + Bbits &
+
+OP mee
+
+Vow of BOBS
+[00:14:52.96] Professor:  Coming to the Z flag or the zero flag, it is supposed to be set.
+[00:14:57.36] Professor:  If within the contents of the temporary register, we have got all zeros.
+[00:15:00.00] Slide Text: Instruction Type: CMP R
+
+© CoMPare Accumulator with R.
+
+e Flags are affected based on the Temporary Register’s content.
+
+v Otuaton 4D LA>E;
+
+1
+FSH
+S
++ D BH
+} D OH
+1101 90000
+2
+TR
+
+y
+
+ro fw F
+
+Cs a
+
+F5
+
+25
+
+- ma
+
++ Sbits = + Bbits &
+
+Vea of 8085
+[00:15:02.60] Professor:  Do we have that? No, right? So the Z flag will also be reset to 0.
+[00:15:08.50] Professor:  Can you tell me what will be the situation for the S or sign flag?
+[00:15:10.00] Slide Text: Instruction Type: CMP R
+© CoMPare Accumulator with R.
+
+e Flags are affected based on the Temporary Register’s content.
+
+v Otuaton 4D LA>E;
+
+- man
+
+1 A F5
+. D BH SZ x AC x Pox & . 0s
+rs 0 1 0 0
+1 D OH 4
+1101 0000 < Bbits © = Bbits =
+TR
+
+Spe tram mers ow of BOBS
+[00:15:13.42] Professor:  Notice here the most significant bit is 1.
+[00:15:17.10] Professor:  So clearly, the sign flag will also be set to 1.
+[00:15:20.00] Slide Text: Instruction Type: CMP R
+
+© CoMPare Accumulator with R.
+
+e Flags are affected based on the Temporary Register’s content.
+
+v Otuaton 4D LA>E;
+
+1
+FSH
+S
++ D BH
+a 1
+1} D OH Ld
+1101 0000
+TR
+
+y
+
+rr Oo wB@ }
+
+a
+
+F5
+
+25
+
+- man
+
++ &bits = + Bbits &
+
+Vow of BOBS
+[00:15:21.52] Professor:  From this, you can notice one thing.
+[00:15:23.40] Professor:  No matter where we are storing the result, it will affect the flags register in the same way, irrespective of where we are going to keep it.
+[00:15:30.00] Slide Text: Instruction Type: CMP R
+
+© CoMPare Accumulator with R.
+
+e Flags are affected based on the Temporary Register’s content.
+
+~ Ctuation 1 ALE;
+
+1
+FO5H
+S
++ D BH
+a 1
+1 D OH
+1101 0000
+TR
+
+y
+
+F5 F
+
+25
+
+ro 7 Y
+- mn
+
+«+ &bits = + bits ©
+
+Spr mer sw of BOBS
+[00:15:33.10] Professor:  In our previous cases, we used to update this result within the accumulator.
+[00:15:38.42] Professor:  This time we are taking the help of the temporary register.
+[00:15:40.00] Slide Text: Instruction Type: CMP R
+
+© CoMPare Accumulator with R.
+
+e Flags are affected based on the Temporary Register’s content.
+2
+
+v Otuaton 4D LA>E;
+
+1
+F OSH
+S
++ D BH
+ae 1
+1} D OH
+1101 90000
+TR
+
+OP mee
+
+25
+
+- mn
+
++ &bits = + Bbits &
+
++ eu of BOBS
+[00:15:42.02] Professor:  However, the flags within the flags register are being affected in the similar way as we did it for the accumulator's updation.
+[00:15:50.00] Slide Text: Instruction Type: CMP R
+
+© CoMPare Accumulator with R.
+
+e Flags are affected based on the Temporary Register’s content.
+
+wv Ctuation 1 (AE;
+
+]
+F OSH
+S
++ D BH
+a 1
+1} D OH
+1101 90000
+TR
+
+F5
+
+rr oO FT }
+
+25
+
+- mf
+
++ Sbits = + Bbits &
+
+OP rime
+
+Vow of BOBS
+[00:15:52.18] Professor:  Anyway, let's get back to our discussion.
+[00:15:55.72] Professor:  From the contents of the flags register, the microprocessor is going to determine whether the situation is a greater than e or does a have the value which is higher than the value within the irregister.
+[00:16:00.00] Slide Text: Instruction Type: CMP R
+
+© CoMPare Accumulator with R.
+
+e Flags are affected based on the Temporary Registers content.
+
+w Ctuation 1: Ax€}
+
+1
+FO5H
+S
++ D BH
+a 1
+1} D OH
+1101 0000
+TR
+
+F5
+
+ro f@ }
+
+25
+
+- mn
+
++ Sbits = + Bbits &
+
+ae
+
+Vow of BOBS
+[00:16:10.00] Slide Text: Instruction Type: CMP R
+e CoMPare Accumulator with R.
+
+e Flags are affected based on the Temporary Register’s content.
+
+w Ctuation 1: AE}
+
+1 A F5 F
+. D BH S Z x AC x P x Cy . a
+1 0 1 0 0 °
+1 D OH H L
+1101 0000 < Bbits © = Bbits =
+TR
+
+Spore mer shew Of BOBS
+[00:16:10.10] Professor:  And for this, it is going to focus on two different flags.
+[00:16:15.36] Professor:  First of all, the carry flag.
+[00:16:17.46] Professor:  Now, why exactly the carry flag?
+[00:16:20.00] Slide Text: Instruction Type: CMP R
+
+© CoMPare Accumulator with R.
+
+e Flags are affected based on the Temporary Register’s content.
+
+wv Ctuation 1 AE;
+
+1
+FSH
+S
++ D BH
+a 1
+1} D OH
+1101 0000
+TR
+
+rr Oo fB@ }F
+
+Op rei me
+
+F5
+
+25
+
+- mn
+
++ Sbits = + Bbits &
+
+Vow of BOBS
+[00:16:20.14] Professor:  After we perform the subtraction, if the carry is generated, that will mean the value which has been generated is a positive value.
+[00:16:30.00] Slide Text: Instruction Type: CMP R
+
+© CoMPare Accumulator with R.
+
+e Flags are affected based on the Temporary Register’s content.
+
+v Otuation D LAE;
+]
+
+FO5H
+S
++ D BH
+a 1
+1 D._OH
+»
+1101 90000
+TR
+
+y
+
+rr Oo wB }F
+
+OP ream ee
+
+F5
+
+25
+
+- mn
+
++ Sbits = + Bbits ©
+
+Vow of BOBS
+[00:16:30.14] Professor:  And that's the reason why the carry is discarded as it is being fed to the carry flag, where they're not get.
+[00:16:36.78] Professor:  So the carry flag status is a necessary element.
+[00:16:40.00] Slide Text: Instruction Type: CMP R
+
+e CoMPare Accumulator with R.
+
+e Flags are affected based on the Temporary Register’s content.
+
+wv Cituation 1 (AE;
+1
+
+F SH
+S
++ D BH
+a 1
+1 D OH
+1101 0000
+TR
+
+F5
+
+ro eB }
+
+25
+
+- ma
+
++ Sbits = + Bbits ©
+
+Opa me
+
+ea of BOBS
+[00:16:41.62] Professor:  Coming to the second flag, it is the Z flag or the zero flag.
+[00:16:46.30] Professor:  If the zero flag is reset, that will mean the contents within the temporary register is not all zeros.
+[00:16:50.00] Slide Text: Instruction Type: CMP R
+
+© CoMPare Accumulator with R.
+
+e Flags are affected based on the Temporary Register’s content.
+
+wv Ctuation 1 AE;
+
+]
+FSH
+S
++ D BH .
+a 1
+
+1} D OH
+1101 90000
+
+TR
+
+F5
+
+rr Oo wT F
+
+25
+
+- mn
+
++ Sbits = + Bbits ©
+
+Ope im mee
+
+Vea of BOBS
+[00:16:54.66] Professor:  And it can only be all zeros if both the registers contain the same value.
+[00:17:00.00] Slide Text: Instruction Type: CMP R
+
+© CoMPare Accumulator with R.
+
+e Flags are affected based on the Temporary Register’s content.
+
+v Ctuation 1 /A>E}
+
+}
+
+FSH
+S
++ D BH .
+a 1
+1 D OH
+1101 0000
+TR
+
+rr Oo FB }
+
+a
+
+F5
+
+25
+
+- mn
+
+« Sbits = + Bbits &
+
+Vea of 8085
+[00:17:00.72] Professor:  So this is the reason why the status of the carry and the zero flag will have to be considered.
+[00:17:07.46] Professor:  So do remember, if the carry flag is reset and at the same time the zero flag is reset, the microprocessor will know that the a register is holding the greater value than that of the irregister.
+[00:17:10.00] Slide Text: Instruction Type: CMP R
+
+© CoMPare Accumulator with R.
+
+e Flags are affected based on the Temporary Register’s content.
+
+wv Ctuation 1 AE;
+
+]
+FSH
+S
++ D BH .
+a 1
+
+1} D OH
+1101 90000
+
+TR
+
+F5
+
+rr oO fB@ F
+
+25
+
+- mn
+
++ Sbits = + Bbits &
+
+Op ae imme
+
+Vow of BOBS
+[00:17:20.00] Slide Text: Instruction Type: CMP R
+
+© CoMPare Accumulator with R.
+
+e Flags are affected based on the Temporary Register’s content.
+
+*
+
+1
+F OSH
+S
++ D BH .
+a 1
+
+1} D OH
+1101 0000
+
+TR
+
+Y
+
+rr oO VF@ }F
+
+Op aa mer
+
+F5
+
+25
+
+- mn
+
++ &bits = + Bbits »
+
+Vow of BOBS
+[00:17:21.22] Professor:  Let's now talk about the next situation, that is, situation 2.
+[00:17:25.88] Professor:  Say this time within the accumulator register, we are keeping the value 5 zero and within the general purpose register E, we are storing the value 7 zero.
+[00:17:30.00] Slide Text: Instruction Type: CMP R
+e CoMPare Accumulator with R.
+
+e Flags are affected based on the Temporary Register’s content.
+
+v Otuation 2:
+
+A 50 F
+3
+
+B ie
+
+(>) E
+
+H L
+
++ Sbits = + Bbits ©
+
+Spam meres ow of BOBS
+[00:17:36.54] Professor:  Now with the human beings looking at these two numbers can clearly say 7 zero is higher than 5 zero.
+[00:17:40.00] Slide Text: Instruction Type: CMP R
+e CoMPare Accumulator with R.
+
+e Flags are affected based on the Temporary Registers content.
+
+v Otuation 2:
+
+50 F
+
+70
+
+ro 7 Y
+crc mM a
+
++ Sbits = + Bbits &
+
+Spore ammonia of BOBS
+[00:17:44.54] Professor:  Though the value of 5 zero in decimal will be different than 7 zero, but it's pretty evident, whatever decimal value 7 zero will have will definitely be greater than the decimal value of 5 zero.
+[00:17:50.00] Slide Text: Instruction Type: CMP R
+e CoMPare Accumulator with R.
+
+e Flags are affected based on the Temporary Registers content.
+
+v Cbuation 2:
+
+50 F
+
+70
+*
+
+rr oO @B@ ,Y
+cr mF
+
++ Sbits = + Bbits &
+
+periment ow of BOBS
+[00:17:59.26] Professor:  Anyway, we can see it is the situation where a is holding the value which happens to be lesser than the content of the irregister.
+[00:18:00.00] Slide Text: Instruction Type: CMP R
+e CoMPare Accumulator with R.
+
+e Flags are affected based on the Temporary Register’s content.
+
+v Otuation 2:
+
+50 F
+
+70
+
+ro 7B Y
+- mn
+
++ Sbits = + Bbits &
+
+Sette men sw of BOBS
+[00:18:09.26] Professor:  Now for this two, the microprocessor will have to judge the flags and for that it will have to perform the subtraction operation.
+[00:18:10.00] Slide Text: Instruction Type: CMP R
+e CoMPare Accumulator with R.
+
+e Flags are affected based on the Temporary Register’s content.
+
+v Otuation 2: AE;
+
+50 F
+
+70
+
+rc oO 7B Y
+- my
+
++ &bits = + Bbits »
+
+Spar im men ow of BOBS
+[00:18:19.24] Professor:  So clearly in order to determine whether the value which a has is lesser or greater, the microprocessor will have to perform the subtraction between 5 zero and 7 zero.
+[00:18:20.00] Slide Text: Instruction Type: CMP R
+© CoMPare Accumulator with R.
+
+e Flags are affected based on the Temporary Registers content.
+
+v Ctuation 2: BE;
+
+$0 F
+
+70
+
+rr oO BM Y
+- myn
+
++ Sbits = + Bbits &
+
+Sytem men na of BOBS
+[00:18:30.00] Slide Text: Instruction Type: CMP R
+e CoMPare Accumulator with R.
+
+e Flags are affected based on the Temporary Registers content.
+
+v Ctuation 2: BE}
+50 F
+5 OH
+
+- 7, 0H 10
+
+rc Oo 7B »Y,
+- may
+
++ Sbits = + Bbits &
+
+Petes mers on of BOBS
+[00:18:32.78] Professor:  Like I mentioned earlier, in case of 8085 microprocessor, subtraction is never performed, so we need to find out the 16th complement of 7 zero.
+[00:18:40.00] Slide Text: Instruction Type: CMP R
+e CoMPare Accumulator with R.
+
+e Flags are affected based on the Temporary Register’s content.
+
+v Otuation 2: MAE}
+$0 F
+5 OH
+
+7 OH
+
+7
+— (e)
+
+ro B@ Y
+- mn
+
++ Sbits = + Bbits ©
+
+Spore immen fon of BOBS
+[00:18:43.40] Professor:  Let's now do that.
+[00:18:45.10] Professor:  Now in order to find out the 16th complement of 7 zero, we are supposed to subtract it from F and 1 zero.
+[00:18:50.00] Slide Text: Instruction Type: CMP R
+e CoMPare Accumulator with R.
+
+e Flags are affected based on the Temporary Registers content.
+
+v Ctuation 2: (AcE;
+
+A 50 F
+7 OH 7 OH D Jo O€£
+H L
+
++ Sbits = + Bbits &
+
+param men lw Of BOBS
+[00:18:52.62] Professor:  In other words, the least significant digit will be subtracted from 1 zero and the most significant digit is going to be subtracted from F.
+[00:19:00.00] Slide Text: Instruction Type: CMP R
+© CoMPare Accumulator with R.
+
+e Flags are affected based on the Temporary Register’s content.
+
+ww Ctuation 2 AcE;
+$0 F
+5 OH F 10H
+
+7 OH : 7 OH 70
+
+ro 7B ,Y
+- mn
+
+« &bits = = Sbits =
+
+petra m ens nw of BOBS
+[00:19:03.38] Professor:  Let's perform the subtraction now.
+[00:19:06.18] Professor:  From 1 zero if we subtract zero, we will get the difference as zero.
+[00:19:10.00] Slide Text: Instruction Type: CMP R
+
+© CoMPare Accumulator with R.
+
+e Flags are affected based on the Temporary Registers content.
+
+v Otuation 2
+
+5
+7
+
+AE;
+OH F 10H
+OH - 7 OH
+
+o#
+
+50 F
+
+70
+
+rc Oo M7 »Y
+- my
+
++ Sbits = + Bbits &
+
+psa mer sw of BOBS
+[00:19:11.52] Professor:  Now this digit 1, we are going to return it back to F. Just think about it, we are returning the borrow.
+[00:19:19.16] Professor:  Say we wanted to subtract and for that we borrowed but since we didn't need it, we are going to just return it.
+[00:19:20.00] Slide Text: Instruction Type: CMP R
+e CoMPare Accumulator with R.
+
+e Flags are affected based on the Temporary Registers content.
+
+wv Ctuaton 2 AcE;
+
+1 A 50 F
+5 OH F 10H 4 B ¢
+7 OH - 7 0H b 0 €
+
+OH 4 L
+
++ Sbits = + Bbits &
+
+Opie mer > how of BOBS
+[00:19:27.46] Professor:  Now adding 1 with F, we will have the value 1 zero.
+[00:19:30.00] Slide Text: Instruction Type: CMP R
+© CoMPare Accumulator with R.
+
+e Flags are affected based on the Temporary Register’s content.
+
+wv Ctuation 2: AcE}
+
+A 50 F
+
+5 OH F 10H B C
+*
+
+7° OH - 7 OH b 70
+
+OH 4 L
+
++ &bits = + Bbits ©
+
+Spe trimmer iw of BOBS
+[00:19:32.04] Professor:  Now 1 zero of x-ray symbol is actually 16 in decimal.
+[00:19:36.26] Professor:  Now from 16 if we subtract 7, the value that we are going to get as a result is 9.
+[00:19:40.00] Slide Text: Instruction Type: CMP R
+e CoMPare Accumulator with R.
+
+e Flags are affected based on the Temporary Registers content.
+
+v Otuation 2: AcE}
+
+(16). A 50 F
+
+5 OH 10 10H 8 c
+7 OH - 7 OH b 0
+OH 4 L
+
++ &bits = + bits »
+
+pst mers uw of BOBS
+[00:19:42.90] Professor:  Now if you notice, this is the very first time when in order to find the 16th complement of a particular value, we had to operate with the carry.
+[00:19:50.00] Slide Text: Instruction Type: CMP R
+e CoMPare Accumulator with R.
+
+e Flags are affected based on the Temporary Registers content.
+
+v Otuation 2: BE;
+
+(16) A 50 F
+
+5 OH 10 10H 8 c
+
+7 OH - 7 OH b 0
+9 OH
+
+‘ H L
+
++ Sbits = + Bbits &
+
+Sperm en Sow of BOBS
+[00:19:54.54] Professor:  Right?
+[00:19:55.56] Professor:  So let's just check whether the derivation of the 16th complement of 7 zero is valid or not.
+[00:20:00.00] Slide Text: Instruction Type: CMP R
+© CoMPare Accumulator with R.
+
+e Flags are affected based on the Temporary Register’s content.
+
+w Ctuation 2: AcE}
+
+(16). A 50 F
+5 OH 10 10H B c
+7 OH - 7 OH b 0 €
+9 OH 4 L
+
++ Sbits = + Bbits &
+
+Spore immer fou of BOBS
+[00:20:02.78] Professor:  Now the question is how to do that?
+[00:20:05.90] Professor:  Well the 16th complement of a hexadecimal value, if converted to binary, is going to be the equivalent of the 2's complement.
+[00:20:10.00] Slide Text: Instruction Type: CMP R
+e CoMPare Accumulator with R.
+
+e Flags are affected based on the Temporary Register’s content.
+
+~ Ctuation 2: (AcE;
+
+(16) A 50 F
+5 OH 10 10H 8 c
+7 OH - 7 OH b 0
+9 OH 4 L
+
++ Sbits = + Bbits &
+
+Spear immer > fou of BOBS
+[00:20:15.72] Professor:  So let's now find out the binary of 7 zero.
+[00:20:20.00] Slide Text: Instruction Type: CMP R
+e CoMPare Accumulator with R.
+
+e Flags are affected based on the Temporary Registers content.
+
+v Otuation 2: AcE}
+
+(16), ar) F
+5 OH 10 10H 8 c
+7 OH _ 7 OH b 0 £
+9 OH 4 L
+
++ &bits = + Bbits
+
+Opera men how of BOBS
+[00:20:20.06] Professor:  Zero is going to be 4 zeros, what about 7?
+[00:20:23.88] Professor:  The 4 bit binary equivalent of 7 is 0 followed by triple 1.
+[00:20:28.82] Professor:  Now we already know how to convert a binary into its equivalent to its complement.
+[00:20:30.00] Slide Text: Instruction Type: CMP R
+
+© CoMPare Accumulator with R.
+
+e Flags are affected based on the Temporary Registers content.
+
+wv Otuation 2 AcE}
+
+(16),,
+5 OH 10 10H
+7 OH 7 OH
+
+9 OH
+
+0111 0000
+
+50 F
+
+70
+
+ro 7 »Y
+- my
+
++ Sbits = + Bbits &
+
+Seta men’s uw of BOBS
+[00:20:34.08] Professor:  All we have to do is keep on retaining the value from the least significant bit toward the most significant bit until we encountered the first one.
+[00:20:40.00] Slide Text: Instruction Type: CMP R
+
+© CoMPare Accumulator with R.
+
+e Flags are affected based on the Temporary Register’s content.
+
+wv Otuation 2 AcE}
+
+(16),,
+5 OH 10 10H
+7 OH 7 OH
+
+9 OH
+
+0111 0000
+*
+
+50 F
+
+70
+
+ro 7 »Y
+cr ms
+
++ Sbits = + Bbits ©
+
+pti men’s ow of BOBS
+[00:20:43.64] Professor:  Once we encountered the bit 1, we will also retain that.
+[00:20:48.20] Professor:  However, the rest of the bits we are going to complement them.
+[00:20:50.00] Slide Text: Instruction Type: CMP R
+
+© CoMPare Accumulator with R.
+
+e Flags are affected based on the Temporary Registers content.
+
+wv Otuation 2: SAE}
+
+(16). A 50
+5 OH 10 10H 8
+7 OH - 7 OH Pt Tt Oooo D
+
+9 OH 1 0000 H
+
+70
+
+- mf
+
++ Sbits = + Bbits &
+
+OP mee
+
+Ven of 8085
+[00:20:52.94] Professor:  Now notice 4 zeros is 0 and 1 0 0 1 is 9.
+[00:21:00.00] Slide Text: Instruction Type: CMP R
+e CoMPare Accumulator with R.
+
+e Flags are affected based on the Temporary Register’s content.
+
+w Cteation 2: (AcE;
+
+(16).
+5 OH 10 10H
+7 OH - 7 OH 0111 0000
+
+9 OH 1001 0000
+.
+
+rr Oo eB FY
+
+Op am mer
+
+50
+
+70
+
+- mn
+
++ Sbits = + Bbits &
+
+Joa of BOBS
+[00:21:00.80] Professor:  So clearly our derivation of the 16th complement was correct.
+[00:21:06.32] Professor:  Now in place of 7 zero, we can have 9 zero and we can proceed ahead with the addition.
+[00:21:10.00] Slide Text: Instruction Type: CMP R
+
+© CoMPare Accumulator with R.
+
+e Flags are affected based on the Temporary Register’s content.
+
+_“
+
+Oe
+
+ott
+
+5
+9
+
+OH
+OH
+e
+
+50 F
+
+70
+
+ro 7B Y
+- mt
+
++ Sbits = + Bbits &
+
+Spt ram mers ow of BOBS
+[00:21:13.00] Professor:  Zero plus zero will give us 0, what about adding 5 with 9?
+[00:21:18.60] Professor:  Well it is going to give us the value 14 of decimal, however in hexadecimal that is E.
+[00:21:20.00] Slide Text: instruction Type: CMP R
+© CoMPare Accumulator with R.
+
+e Flags are affected based on the Temporary Register’s content.
+
+~ Ctuation 2 AcE}
+
+A so F
+
+5 OH B fa
++ 9 OH D Jo O€£
+OH H L
+
++ &bits = + Bbits »
+
+Opese immer ow of BOBS
+[00:21:26.18] Professor:  So the outcome that we have generated is E0.
+[00:21:30.00] Slide Text: Instruction Type: CMP R
+e CoMPare Accumulator with R.
+
+e Flags are affected based on the Temporary Register’s content.
+
+v Obuation 2: AcE}
+
+A 50 F
+
++ 9 OH D 10 E
+E OH
+
+° H L
+
++ Sbits = + Bbits &
+
+Cpe am men's Low of BOBS
+[00:21:30.58] Professor:  Now where we will store this outcome?
+[00:21:33.52] Professor:  Well as I told you earlier in the temporary register.
+[00:21:36.90] Professor:  So 0 is 4 zeros, what about E?
+[00:21:40.00] Slide Text: Instruction Type: CMP R
+
+© CoMPare Accumulator with R.
+
+e Flags are affected based on the Temporary Registers content.
+
+v Otuation 2: BE}
+
+5 OH
++ 9 OH
+E OH
+
+90000
+TR
+
+rr Oo VW }F
+
+50
+
+70
+
+- mn
+
++ Sbits = + Bbits &
+
+Ober
+
+ra of FORS
+[00:21:41.72] Professor:  As I told you, E is 14 of decimal, so the 4 bit equivalent of E is going to be 1110.
+[00:21:50.00] Slide Text: Instruction Type: CMP R
+
+© CoMPare Accumulator with R.
+
+e Flags are affected based on the Temporary Registers content.
+
+v Otuation 2 AcE}
+
+5 OH
++ 9 OH
+E OH
+T11Q 0000
+
+TR
+
+ro 7 F
+
+re a
+
+50
+
++ Sbits = + Bbits &
+
+F
+ie
+7O 20€£
+L
+Vow of BOBS
+[00:21:50.14] Professor:  Let's now check the flags register.
+[00:21:52.76] Professor:  As you can notice, since we haven't generated any carry, feeding 0 via the not get to the carry flag will set the carry flag.
+[00:22:00.00] Slide Text: Instruction Type: CMP R
+
+© CoMPare Accumulator with R.
+
+e Flags are affected based on the Temporary Register’s content.
+
+w Cituation 2: AcE}
+
+5 OH
++ 9 OH 5 7 *
+0 E OH
+
+1110 0000
+
+TR
+
+rr Oo wFB@ F
+
+Oe am mer >
+
+50
+
++ Sbits = + Bbits &
+
+F
+ie
+7O 206€
+L
+Vow of BOBS
+[00:22:02.16] Professor:  Coming to the parity flag.
+[00:22:04.40] Professor:  Since within the temporary register, we again have 3 ones, that is an odd number.
+[00:22:10.00] Slide Text: Instruction Type: CMP R
+e CoMPare Accumulator with R.
+
+e Flags are affected based on the Temporary Register’s content.
+
+w Otuation 2: AcE}
+
+4 A 50 F
+
+p08 S$ Z x AC x P x cy 8 ¢
+7 9 OH , Oo 70 O€
+Oo E OH 4 L
+11100000 *# + Sbits = = bits &
+
+TR petra mre ow of BOBS
+[00:22:12.14] Professor:  And we know the parity flag can only be set if within the contents we have got even number of ones.
+[00:22:18.78] Professor:  So the parity flag is going to be reset.
+[00:22:20.00] Slide Text: Instruction Type: CMP R
+
+© CoMPare Accumulator with R.
+
+e Flags are affected based on the Temporary Register’s content.
+
+w Otuation 2: AcE}
+
+5 OH
++ 9 OH 5 7 *
+0 E OH
+
+1110 0000
+
+TR
+
+Y
+
+rr oO VF@ }F
+
+Op
+
+50
+
++ &bits = + Bbits »
+
+F
+ie
+7O O0€E
+L
+Ven of BO8S
+[00:22:21.82] Professor:  Coming to the auxiliary carry flag.
+[00:22:24.02] Professor:  Since no carry was generated from the addition of the least significant 2 digits.
+[00:22:28.06] Professor:  So the auxiliary carry flag is going to be reset as well.
+[00:22:30.00] Slide Text: Instruction Type: CMP R
+
+e CoMPare Accumulator with R.
+
+e Flags are affected based on the Temporary Register’s content.
+
+vw Ctuation 2: AcE;
+
+5 OH
++ 9 OH 5 7%
+0 E OH
+
+1110 0000
+
+TR
+
+ro VB }
+
+Op am mee
+
+50
+
++ Sbits = + Bbits &
+
+F
+ie
+7O O0€
+L
+Jew of BOBS
+[00:22:32.58] Professor:  What about the Z flag?
+[00:22:34.50] Professor:  We have got 3 ones, that is not all of them are zeros.
+[00:22:39.90] Professor:  So the 0 flag will be reset as well.
+[00:22:40.00] Slide Text: Instruction Type: CMP R
+
+© CoMPare Accumulator with R.
+
+e Flags are affected based on the Temporary Registers content.
+
+v Ctuation 2: BE}
+
+5 OH
++ 9 OH . an
+Oo E OH
+11100000
+
+TR
+
+ro fF }
+
+Op ames
+
+50
+
++ &bits =
+
+70
+
+- ma
+
+* S bits ©
+
+Jew of BOBS
+[00:22:42.40] Professor:  Coming to the sign flag, this is going to be set because the most significant bit is 1.
+[00:22:49.42] Professor:  So this will be set.
+[00:22:50.00] Slide Text: Instruction Type: CMP R
+
+© CoMPare Accumulator with R.
+
+e Flags are affected based on the Temporary Registers content.
+
+w Oituation 2: AcE}
+
+5 OH
+S Z x
++ 9 OH
+_— ne)
+Oo E OH
+1110 0000
+
+TR
+
+ro VB }F
+
+ae
+
+50
+
++ Sbits = + Bbits &
+
+F
+Cc
+70 ~2«€
+L
+vw of BOBS
+[00:22:52.00] Professor:  Now look at the flags.
+[00:22:53.46] Professor:  We are going to consider the carry flag and the Z flag.
+[00:22:57.36] Professor:  Coming to carry flag, since it is 1, it clearly specifies that the generated result is a negative value.
+[00:23:00.00] Slide Text: Instruction Type: CMP R
+
+© CoMPare Accumulator with R.
+
+e Flags are affected based on the Temporary Registers content.
+
+wv Otuation 2: AcE}
+
+5 OH :
+S‘'Z x
++ 9 OH . .
+_— ne)
+Oo E OH
+1410 0000
+
+TR
+
+rr Oo VW }F
+
+Ope mee
+
+50
+
++ &bits = + Bbits &
+
+F
+Cc
+70 ~2«€
+L
+Vea of BOBS
+[00:23:05.76] Professor:  If only the carry was generated, that would have specified that the generated result is a positive value.
+[00:23:10.00] Slide Text: Instruction Type: CMP R
+
+e CoMPare Accumulator with R.
+
+e Flags are affected based on the Temporary Registers content.
+
+w Ctuation 2: AcE}
+
+S'Z x
++ 9 OH . :
+a
+
+1 0
+Oo E OH
+1110 0000
+
+TR
+
+rr Oo B@ }
+
+Op emer
+
+50
+
++ Sbits = + Bbits &
+
+F
+ie
+70 20€£€
+L
+Vow of BOBS
+[00:23:13.18] Professor:  But since it is not the case in here, and additionally, the Z flag is also reset.
+[00:23:19.32] Professor:  So from this, it is pretty evident to the 8085 microprocessor that the content which accumulator has
+[00:23:20.00] Slide Text: Instruction Type: CMP R
+
+e CoMPare Accumulator with R.
+
+e Flags are affected based on the Temporary Register’s content.
+
+w Ctuation 2: AcE}
+
+S'Z x
++ 9 OH . :
+ —_— 1 0
+Oo E OH
+1110 0000
+
+TR
+
+rr Oo B@ }
+
+Opa mer
+
+50
+
++ Sbits = + Bbits &
+
+F
+ie
+70 20€£€
+L
+Vea of BOBS
+[00:23:25.72] Professor:  is actually lesser than the content which the e-register has.
+[00:23:30.00] Slide Text: Instruction Type: CMP R
+
+© CoMPare Accumulator with R.
+
+e Flags are affected based on the Temporary Register’s content.
+
+v Otuation 2: {AcE}
+
+5 OH
++ 9 OH
+© E OH
+11100000
+
+TR
+
+rr Oo fF F
+
+70
+
+- em nN
+
++ &bits = + Bbits ©
+
+Ppt men Low of BOBS
+[00:23:30.04] Professor:  That is, 70 is greater than 50.
+[00:23:35.08] Professor:  Let us now focus on the last situation, that is, situation number 3.
+[00:23:40.00] Slide Text: Instruction Type: CMP R
+e CoMPare Accumulator with R.
+
+e Flags are affected based on the Temporary Register’s
+
+v Ctuation 3
+
+*
+
+ro Ff }
+
+content.
+
+- mn
+
++ Sbits = + Bbits &
+
+Oper am mee Sow af FORS
+[00:23:40.14] Professor:  Say this time within the accumulator register, we have got the value 50.
+[00:23:44.96] Professor:  And the same value 50, we also have within the general purpose register E.
+[00:23:50.00] Slide Text: Instruction Type: CMP R Fi 63 ©  shesoacademy
+
+© CoMPare Accumulator with R.
+
+e Flags are affected based on the Temporary Register’s content.
+
+v Otuation 3
+
+$0 F
+
+50
+
+xr oO FP Y
+mem nN
+
++ &bits = + Bbits »
+
+Spt trammer s ow of BOBS
+[00:23:50.82] Professor:  Now we the users can clearly state A is equal to E.
+[00:23:55.30] Professor:  How the microprocessor is going to find it out?
+[00:23:58.28] Professor:  Well for that, it will have to perform the subtraction.
+[00:24:00.00] Slide Text: instruction Type: CMP R
+e CoMPare Accumulator with R.
+
+e Flags are affected based on the Temporary Register’s content.
+
+v Obuation 3 ‘A.E}
+50 F
+5 OH
+
+5 OH 50
+
+ro @ ,Y
+- mn
+
++ Sbits = + Bbits &
+
+Spammers ew of BOBS
+[00:24:01.96] Professor:  Now we need to find out the 16's complement of 50.
+[00:24:05.92] Professor:  So let us do that.
+[00:24:07.60] Professor:  If we subtract 0 from 1 0 and 5 from F, we will be able to find it right.
+[00:24:10.00] Slide Text: instruction Type: CMP R
+e CoMPare Accumulator with R.
+
+e Flags are affected based on the Temporary Register’s content.
+
+v Otuation 3 ‘A.Ej
+0 F
+5 OH F 10H
+
+5 OH - 5 OH 50
+
+rr oO n7 Y
+- mn
+
++ Sbits = + Bbits &
+
+Spore men Sow Of BOBS
+[00:24:13.98] Professor:  So from 1 0 if we subtract 0, we will have 0 in here.
+[00:24:18.40] Professor:  And this 1, we are going to return it to the next digit.
+[00:24:20.00] Slide Text: Instruction Type: CMP R
+e CoMPare Accumulator with R.
+
+e Flags are affected based on the Temporary Registers content.
+
+v Obuation 3: ‘RE;
+
+A 50 F
+5 OH F 10H 8 c
+5 OH - 5 OH O so OE
+
+OH H L
+
++ Sbits = + Bbits &
+
+ptt mer sw of BOBS
+[00:24:22.30] Professor:  You can think of the situation as returning the borrow.
+[00:24:26.84] Professor:  Say we wanted to perform the subtraction and we borrowed it from the next digit.
+[00:24:30.00] Slide Text: Instruction Type: CMP R
+e CoMPare Accumulator with R.
+
+e Flags are affected based on the Temporary Register’s content.
+
+v Otuation 3 AE}
+
+1 a) F
+
+5 OH F 10H 8
+
+5 OH - 5 OH D 50
+OH 4
+
+- mn
+
++ Sbits = + Bbits &
+
+Sporn imm er Sow Of BOBS
+[00:24:32.50] Professor:  But since we didn't require it, so we are going to return it back.
+[00:24:36.94] Professor:  Now adding 1 with F, we will have the value 1 0.
+[00:24:40.00] Slide Text: Instruction Type: CMP R
+e CoMPare Accumulator with R.
+
+e Flags are affected based on the Temporary Register’s content.
+
+v Obuation 3: ‘RE;
+
+A 50 F
+5 OH 10 10H 8
+5 OH - £ oH 5 50
+OH 4
+
+- mM A
+
++ Sbits = + Bbits &
+
+pst mers uw of BOBS
+[00:24:41.96] Professor:  And 1 0 in decimal is 16.
+[00:24:45.28] Professor:  Now from 16 if we subtract 5, the result is 11, which happens to be B in case of X or decimal.
+[00:24:50.00] Slide Text: Instruction Type: CMP R
+e CoMPare Accumulator with R.
+
+e Flags are affected based on the Temporary Registers content.
+
+~ Otuation 3: AE
+
+(16), A 50 F
+
+5 OH 10 10H B c
+5 OH - 5 OH 4 b sok
+OH 4 L
+
++ Sbits = + Bbits &
+
+petra mer sow of BOBS
+[00:24:52.70] Professor:  So the 16's complement of 5 0 is B 0.
+[00:24:57.44] Professor:  Now we can proceed ahead with the addition.
+[00:25:00.00] Slide Text: Instruction Type: CMP R
+© CoMPare Accumulator with R.
+
+e Flags are affected based on the Temporary Register’s content.
+
+v Cituation 3: AE}
+50 F
+
+5 OH
++ B OH
+
+*
+
+50
+
+rc oO B7 Y
+- myn
+
++ Sbits = + Bbits &
+
+Optra m en ow of BOBS
+[00:25:00.70] Professor:  Adding 0 with 0, we will get the sum as 0, no carry.
+[00:25:04.98] Professor:  Now adding 5 with B, that is 11, we will get 16 or 1 0.
+[00:25:10.00] Slide Text: Instruction Type: CMP R
+e CoMPare Accumulator with R.
+
+e Flags are affected based on the Temporary Register’s content.
+
+v Otuation 3: BE;
+
+A 50 F
++ B OH ° so E
+OH H L
+
++ Sbits = + Bbits &
+
+Opera mer > a of FORE
+[00:25:12.68] Professor:  Now notice, within the temporary register, we are going to store the binary equivalent of the least significant two digits.
+[00:25:19.46] Professor:  So it is going to be all zeros.
+[00:25:20.00] Slide Text: instruction Type: CMP R
+e CoMPare Accumulator with R.
+
+e Flags are affected based on the Temporary Registers content.
+
+v Obuation 3: ‘A. Ej
+
+A so F
++ B OH D 50
+1 0 OH H L
+
++ &bits = + Bbits »
+
+TR Petre am more Vow of BOBS
+[00:25:23.16] Professor:  Let's now check out the status of the different flags within the flags register.
+[00:25:27.50] Professor:  Since we generated a carry, why the not get if we send it to the carry flag, the status of the carry flag will be reset to 0.
+[00:25:30.00] Slide Text: Instruction Type: CMP R
+
+© CoMPare Accumulator with R.
+
+e Flags are affected based on the Temporary Register’s content.
+
+~ Ctuation 3: AE;
+
+5 OH
++ B OH
+1 0 OH
+*
+
+0000 0000
+TR
+
+x
+
+AC
+
+x
+
+Y
+
+Cy
+
+50 F
+
+50
+
+rr oO B@ Y
+- ms
+
++ &bits = + Bbits &
+
+Tetra mer sw of BOBS
+[00:25:37.74] Professor:  Coming to the parity flag, it is to be set if within the temporary register, we have got even number of ones.
+[00:25:40.00] Slide Text: Instruction Type: CMP R
+
+© CoMPare Accumulator with R.
+
+e Flags are affected based on the Temporary Register’s content.
+
+~ Ctuation 3: AE;
+
+5 OH
+Ss
++ B OH
+1 0 OH
+0000 0000
+TR
+
+x
+
+AC
+
+xe
+
+P
+
+x
+
+¥
+
+Cy
+0
+
+rr oO FB F
+
+Ope me
+
+50
+
+50
+
+- mf
+
++ &bits = + Bbits &
+
+Vow of BOBS
+[00:25:45.52] Professor:  Now notice something interesting in here, we have got no ones or in other words 0 ones in here, right?
+[00:25:50.00] Slide Text: Instruction Type: CMP R
+e CoMPare Accumulator with R.
+
+e Flags are affected based on the Temporary Registers content.
+
+wv Otuation 3: AE;
+
+- mn
+
+Yy A 50 F
+5 OH ’ 8
+S$ Z x AC x P x Cy
++ B OH
+nnn 0 D 50
+1 0 OH 4
+0000 0000 « &bits = + Bbits ©
+
+TR Oper smmes > ow af BOBS
+[00:25:54.00] Professor:  But 0 happens to be an even number.
+[00:25:57.18] Professor:  So this time the parity flag is going to be set.
+[00:26:00.00] Slide Text: Instruction Type: CMP R
+
+© CoMPare Accumulator with R.
+
+e Flags are affected based on the Temporary Register’s content.
+
+v Otuaton B: AE}
+
+5 OH
++ B oH °* * *
+1 0 OH
+0000 0000
+
+TR
+
+y
+
+ro 7B }
+
+OP ream mee
+
+50
+
+50
+
+- ma
+
++ Sbits = + Bbits &
+
+Vea of BOBS
+[00:26:01.30] Professor:  What about the auxiliary carry?
+[00:26:03.56] Professor:  We didn't get any carry while performing the addition of the least significant two digits.
+[00:26:08.36] Professor:  So clearly the auxiliary carry is going to be reset.
+[00:26:10.00] Slide Text: Instruction Type: CMP R
+
+© CoMPare Accumulator with R.
+
+e Flags are affected based on the Temporary Register’s content.
+
+v Otuaton B: AE}
+
+5 OH
++ B oH °* * *
+1 0 OH
+0000 0000
+
+TR
+
+y
+
+ro wB@ }F
+
+OP iim ee
+
+50
+
+50
+
+- ma
+
++ &bits = + Bbits &
+
+Vow of BOBS
+[00:26:11.74] Professor:  Coming to Z flag, if you notice, this time all of them are zeros.
+[00:26:18.06] Professor:  So the Z flag will be set.
+[00:26:20.00] Slide Text: Instruction Type: CMP R
+
+© CoMPare Accumulator with R.
+
+e Flags are affected based on the Temporary Register’s content.
+
+wv Ctuation 3: AE}
+
+5 OH
++ B OH 5 7%
+1 0 OH ‘
+0000 0000
+TR
+
+y
+
+rr Oo FB }
+
+Op am mers
+
+50
+
+50
+
+- ma
+
++ &bits = + Bbits »
+
+Vow of BOBS
+[00:26:21.08] Professor:  Now what will be the status of the sign flag?
+[00:26:23.66] Professor:  The most significant bit is 0.
+[00:26:26.38] Professor:  So the sign flag is also going to be reset.
+[00:26:29.66] Professor:  Now notice, since the carry flag is 0, which evidently specifies that the output is a positive value,
+[00:26:30.00] Slide Text: Instruction Type: CMP R
+
+e CoMPare Accumulator with R.
+
+e Flags are affected based on the Temporary Register’s content.
+
+v Ctuation 3: (ALE;
+
+5 OH
+S Z x
++ B OH
+TTT 0.1
+1 OQ OH
+»
+0000 0000
+TR
+
+y
+
+ro fF }
+
+Op tam ee
+
+50
+
+50
+
+- ma
+
++ Sbits = + Bbits ©
+
+Joa of BOBS
+[00:26:37.28] Professor:  because if you think about it, in case of 8.085 microprocessor, since we use the two complement representation,
+[00:26:40.00] Slide Text: Instruction Type: CMP R
+e CoMPare Accumulator with R.
+
+e Flags are affected based on the Temporary Registers content.
+
+w~ Ctuation 3: SAE}
+
+4 A 50 F
+5 OH oa B Cc
+. B OOH S$ Z x AC x P x ity 3 coe
+—————- 0 1 fe) 1 fe)
+1 0 OH 4 L
+0000 0000 » < &bits = = bits &
+
+TR Op ara mer few of BOBS
+[00:26:44.96] Professor:  here 0 is a positive value, not a neutral value.
+[00:26:49.72] Professor:  So carry being 0 is specifying that.
+[00:26:50.00] Slide Text: Instruction Type: CMP R
+e CoMPare Accumulator with R.
+
+e Flags are affected based on the Temporary Register’s content.
+
+v Obuation 3: LAE}
+
+5 OH
+S Zz x
++ B OH
+TT Qo #1
+1 0O OH
+0000 0000
+TR °
+
+Y
+
+rr Oo 7 }
+
+Op rea mer
+
+50
+
+50
+
+- mn
+
++ Sbits = + Bbits &
+
+Vea of BOBS
+[00:26:53.60] Professor:  Now if you look at the Z flag, it is 1, which specifies that the entire content within the temporary register is all zeros.
+[00:27:00.00] Slide Text: Instruction Type: CMP R
+© CoMPare Accumulator with R.
+
+e Flags are affected based on the Temporary Register’s content.
+
+wv Ctuation 3: AE}
+
+Yy A 50
+5 OH ve oar B
+$°Z AC P iCy-
++ B OH * * why 5 50
+——— 01 (e) 1 (e)
+1 0 OH 4
+0000 0000 « Bbits © = Bbits =
+
+- ma
+
+TR bd Cp anam mee’ Seu of BOBS
+[00:27:02.50] Professor:  So from the status of these two flags, the 8.085 microprocessor knows that the value which the accumulator register has is as same as the value within the e-register.
+[00:27:10.00] Slide Text: Instruction Type: CMP R
+
+© CoMPare Accumulator with R.
+
+e Flags are affected based on the Temporary Register’s content.
+
+wv Ctuation 3: AE}
+
+S'Z x
+TTT 0.1
+1 OQ OH
+e000 0000
+TR
+
+y
+
+ro GO ® eF
+
+OP rei me
+
+50
+
+50
+
+- ma
+
++ &bits = + Bbits »
+
+Vow of BOBS
+[00:27:15.62] Professor:  So we learnt about three situations.
+[00:27:19.42] Professor:  The first situation that is accumulator has greater value than the e-register is denoted by the carry flag being reset, as well as the Z flag being reset.
+[00:27:20.00] Slide Text: Instruction Type: CMP R
+
+v Otuaton F ‘A E:
+.
+[00:27:30.00] Slide Text: Instruction Type: CMP R
+
+ww Otuatian 1 AE;
+
+J Vv A Fs F
+F 5H , B c
+S$: Z 5s AC NM PRP ONC
++ D BH Y D a OE
+1 Oy 1 ie] 0
+1 D OH H L
+1101 0000 *Bbin e+ 6bt ©
+
+TR bo mere ue ef BRE
+[00:27:30.70] Professor:  So let's note it down.
+[00:27:32.78] Professor:  When the carry flag and the zero flag both are reset, we can state the accumulator holds higher value.
+[00:27:40.00] Slide Text: Instruction Type: CMP R
+~ Ctuation 4: ‘A-E} Cy=0 & Z=0
+.
+
+w Ota 1 AE
+
+' y
+FO5H '
+$°2Z ~ AC x Pp wie
++ D BH .
+1 1 ) fe)
+1 D OH
+110t 0000
+TR
+
+Fs
+
+25
+
++ Bb + B bits ©
+
+were OL RIEL
+[00:27:41.20] Professor:  Coming to the second situation, that is, a has lesser value than the next register or the next memory location.
+[00:27:49.94] Professor:  This situation is denoted by the status where carry flag is set to 1 and the Z flag is reset to 0.
+[00:27:50.00] Slide Text: Instruction Type: CMP R
+v Otuation LAE; Cy=0& Z=0
+
+v Otuatin 2: AcE;
+.
+[00:27:58.98] Professor:  So we can state when carry flag is set and at the same time Z flag is reset, the accumulator's value is lesser than the next register.
+[00:28:00.00] Slide Text: Instruction Type: CMP R
+~ Ctuation 4: “AE; Cy=0 & Z=0
+~ Ctuation 2: AE; Cy=1& Z=0
+
+a
+
+5 OH
++ 9 OH
+QO E OH
+1110 0000
+
+TR
+
+50 F
+
+70 E
+
+* B8bn s+ B bt ©
+
+ween in Oh BERS
+[00:28:10.00] Slide Text: Instruction Type: CMP R
+~ Ctuation 4: ‘AE; Cy=0 & Z=0
+~ Otuation 2: AcE; Cy=1& Z=0
+s
+
+a
+
+5 OH
++ 9 OH
+QO E OH
+1110 0000
+
+TR
+
+50 F
+€
+70 E
+L
++ Bbn 8 « Bbte
+~ of BORE
+[00:28:10.08] Professor:  Coming to the third situation, that is, both the accumulator as well as the other register has the same value.
+[00:28:18.28] Professor:  And this will be denoted if the carry flag is reset and at the same time the Z flag is set.
+[00:28:20.00] Slide Text: Instruction Type: CMP R
+wv Otuastion 1: ALE; Cy2z0& Z=0
+v Ctustion 2 AE; Cy=1& Z=0
+wv Otuatier 3: AE;
+
+5 OH : 8
+S$° 20s ACS p cn
++> B OH . _ D 50
+o.1 (e) 1 (e)
+10 OH y 4
+0000 0000 * Bbin © + Bb &
+
+TR be eee OO ETEE
+[00:28:25.74] Professor:  So we can say when the carry flag is reset and at the same time the Z flag is set to 1, which clearly specifies that within the temporary register all the bits are zeros, this will mean both of the values are equal.
+[00:28:30.00] Slide Text: Instruction Type: CMP R
+
+~ Otuation 4: {A>E; Cy=0 & Z=0
+~ Ctuation 2: SAE; Cy=1& Z=0
+~ Ctuatier. 3: AE; Cy=0 & Z=1
+v Otte B AE bd
+5 OH oo
++ BOoH * 7.
+Oo 1
+1 0 OH
+0000 0000
+
+TR
+
+50 F
+
+$0 E
+
+* Bbin & © B bits ©
+
+commen en Of ERE
+[00:28:40.00] Slide Text: Instruction Type: CMP R
+~ Otuation 1 AE} Cy20& Z=0
+~ Ctuation 2: AcE; Cy=1& Z=0
+~ Situation 3 fA é Cy=0 & Z=1
+
+y A 50 F
+5 OH yg c
+S22 0N AC x Px ky
++ B OH
+ol ) 1 o =P 50
+1 0 OH , j
+0000 0000 = Bbin ee = B bt ©
+
+TR tm OL BORE
+[00:28:42.72] Professor:  So do remember these combinations of the flags for the respective situations.
+[00:28:50.00] Slide Text: instruction Type: CMP R
+~ Ctuation 1: AE} Cy=0 & Z=0
+~ Otuation 2 AcE; Cy=l1& Z=0
+wv Ctuation 3 ae Cy=0 & Z=1
+
+vw Otsu 2 AE
+
+y A 50 F
+5 OH "og c
+S2Z°N AC NP x ky
++ B OH
+O11 ) 1 o 2P so E
+1 0 OH 4 j
+0000 0000 = Bbin © = Bhi &
+
+TR tc mee n h BRE
+[00:28:50.76] Professor:  So that was all about the instruction type cmpr.
+[00:28:55.62] Professor:  Remember, it falls under the 1 byte long instruction category.
+[00:28:59.98] Professor:  Also, it has got 8 different instructions or to be precise 8 op codes.
+[00:29:00.00] Slide Text: G Topics
+v
+@ Instruction Type: CMP R
+[00:29:05.70] Professor:  Since we are mentioning capital R, we are talking about providing the second op print to the microprocessor using the accumulator or any of the general purpose registers or the memory location which will be pointed by the HL register pair.
+[00:29:10.00] Slide Text: G Topics
+v
+Instruction Type: CMPR ,
+[00:29:20.00] Slide Text: Gg Topics
+v
+M Instruction Type: CMPR ,
+[00:29:21.86] Professor:  Let's now learn about the next instruction type, that is CPID8.
+[00:29:27.58] Professor:  Now coming to the instruction type CPID8, it actually stands for Compare immediate with accumulator.
+[00:29:30.00] Slide Text: Instruction Type: CPI d8 |
+[00:29:35.56] Professor:  Now what do we mean by the immediate value? This is the data of 8 bit which we are sending via the instruction itself.
+[00:29:40.00] Slide Text: Instruction Type: CPI d8
+
+© ComPare Immediate with accumulator.
+[00:29:43.32] Professor:  Now for this instruction also, as we have already mentioned, the first op print will reside inside the accumulator.
+[00:29:50.00] Slide Text: instruction Type: CPI d8
+
+e ComPare Immediate with accumulator.
+
+mn
+
+rc
+
+= Obits & « Bbits &
+
+teen gn Of FORKS
+[00:29:51.00] Professor:  And just like the microprocessor deals with the compare operation, subtraction operation will be used in order to find out the result.
+[00:30:00.00] Slide Text: instruction Type: CPI d8
+
+e ComPare Immediate with accumulator.
+
+mo
+
+rc
+
+= Bbits & «+ B bets »
+
+strimmer Sew of BORS
+[00:30:00.82] Professor:  And the result is going to be stored inside the 8 bit temporary register.
+[00:30:05.28] Professor:  Therefore, the contents of the flags register are going to be affected based on the temporary register's content.
+[00:30:10.00] Slide Text: Instruction Type: CPI d8
+e ComPare Immediate with accumulator.
+
+© Flags are affected based on the Temporary Register’s content.
+
+:
+A ‘ F
+) Cc
+fs) E
+H L
+
+= Bbits = «+ B bits »
+
+sirimmer > ou of BOSS
+[00:30:13.28] Professor:  Now coming to the instruction type CPID8, D8 is actually the data of 8 bit.
+[00:30:20.00] Slide Text: Instruction Type: CPI d8
+e ComPare Immediate with accumulator.
+
+e Flags are affected based on the Temporary Registers content.
+
+CPL dB (ata of --bt) A F
+8 Cc
+ie) E
+H L
+
+= Bbits = «+ B bits »
+
+Set rimmer: on of BOBS
+[00:30:20.64] Professor:  So can you find out in which instruction category size wise this instruction will fall under?
+[00:30:27.66] Professor:  Well CPID is going to require 8 bits and we are sending additional 8 bits of data via the instruction itself.
+[00:30:30.00] Slide Text: Instruction Type: CPI d8
+e ComPare Immediate with accumulator.
+
+e Flags are affected based on the Temporary Register’s content.
+
+CPI d8 (lata of +-bit) A ' F
+
+E-bit [} Cc
+e
+
+ie] E
+
+H L
+
+= Bbits = «+ B bits »
+
+Sec trimmer: feu of BOBS
+[00:30:36.30] Professor:  Therefore cumulatively, this instruction falls under the 2 by 2 long instructions category.
+[00:30:40.00] Slide Text: Instruction Type: CPI d8
+© ComPare Immediate with accumulator.
+
+e Flags are affected based on the Temporary Register’s content.
+
+CPI d8 (lata of #-6it) A ‘ F
+&-bit git B Cc
+0 E
+
+? Bytels} fong
+* H
+<= Bbits & «+ Obits &
+
+rc
+
+Foctimmers few of BOBS
+[00:30:42.82] Professor:  Now just like the previous instruction, this instruction will also have 3 different situations.
+[00:30:48.92] Professor:  The first situation we can say whether the accumulator has greater value than the data of 8 bit which is being provided by the instruction itself.
+[00:30:50.00] Slide Text: Instruction Type: CPI d8
+© ComPare Immediate with accumulator.
+
+e Flags are affected based on the Temporary Registers content.
+
+A F
+8 Cc
+* D E
+H L
+
+= Obits = «+ Bbits »
+
+Fectrammen: Sew of BOBS
+[00:31:00.00] Slide Text: Instruction Type: CPI dé |
+© ComPare Immediate with accumulator.
+
+e Flags are affected based on the Temporary Register’s content.
+
+wv Ctuation 1: ArdB,
+
+A ‘ F
+B c
+9) E
+H L
+
+« B bits = «+ Obits &
+
+Fort ammer > Sw of BOBS
+[00:31:00.24] Professor:  And just like the previous case, here also using the status of the flags register carry and zero, we will determine the situation.
+[00:31:09.96] Professor:  So for this situation that is A is greater than D8, the carry flag is going to be reset as well as the Z flag will be reset.
+[00:31:10.00] Slide Text: Instruction Type: CPI d8
+e ComPare Immediate with accumulator.
+
+e Flags are affected based on the Temporary Register’s content.
+
+v Ctuation Ve ‘A>d8;
+
+i]
+. A F
+B c
+is) E
+H L
+
+= Bbits = «+ B bits »
+
+Speier) fem of BORS
+[00:31:20.00] Slide Text: Instruction Type: CPI d8
+e ComPare Immediate with accumulator.
+
+e Flags are affected based on the Temporary Register’s content.
+
+v Otuaton D “A>d8; Cy=0 & Z=0
+»
+
+A ‘ F
+B c
+D E
+H L
+
+= Bbits = «+ B bits »
+
+Fecwimmers feu of BOBS
+[00:31:20.58] Professor:  Coming to the second situation that is accumulator has lesser value than the value which we are sending in immediate addressing mode.
+[00:31:29.86] Professor:  In order to determine this situation, the status of the carry flag will be set and at the same time Z flag will be reset.
+[00:31:30.00] Slide Text: Instruction Type: CPI d8
+e ComPare Immediate with accumulator.
+
+e Flags are affected based on the Temporary Register’s content.
+
+wv Otuation DT “A>d8; Cy=0 & Z=0
+
+v Otuation 2: AcdB; A. ‘ F
+r
+
+8 Cc
+
+ie) E
+
+H L
+
+= Bbits = «+ Bbits »
+
+Festi mers fon of BORS
+[00:31:38.92] Professor:  Finally for the situation 3 where the accumulators contain as well as the data of 8 bit which is being sent by the instruction both are same, it will be determined by the status of the carry flag if it is reset and at the same time if the Z flag is set.
+[00:31:40.00] Slide Text: Instruction Type: CPI d8
+
+e ComPare Immediate with accumulator.
+
+e Flags are affected based on the Temporary Register’s content.
+
+<
+
+Ctaation 4: ‘A »dB)
+
+Otua tion
+
+laa
+
+ualioe
+
+2
+
+*
+
+A dB:
+
+Cy=0 & Z=0
+Cy=1& Z=0
+
+Cp ae
+
+mn
+
+rc
+
+= Bbits = « Obits =
+
+mers
+
+vow of BORS
+[00:31:50.00] Slide Text: Instruction Type: CPI d8
+e ComPare Immediate with accumulator.
+
+e Flags are affected based on the Temporary Register’s content.
+
+wv Otuation DT ‘A>d8; Cy=0 & Z=0
+
+~ Ctustian 2: Acde} Cy=1& Z=0 A : F
+
+~ Otuation 3: ‘A-d8; 8 C
+e
+
+D E
+
+H L
+
+= Obits = «+ Bbits &
+
+Factmmer ss Seu of BOBS
+[00:31:58.12] Professor:  All of these are similar to the previous situations.
+[00:32:00.00] Slide Text: Instruction Type: CPI d8
+© ComPare Immediate with accumulator.
+
+e Flags are affected based on the Temporary Register’s content.
+
+v Otuation DT ‘A>d8; Cy=0 & Z=0
+
+~ Ctuation 2 Acdg) Cy2l& Z=0 A F
+~ Ctwatirn 3: Ade, Cys0 & Z=1, B c
+ie) E
+H L
+
+= Obits & «+ Bbits »
+
+Factions Sem of BOBS
+[00:32:02.34] Professor:  So that is all about the instruction type CPID8.
+[00:32:06.36] Professor:  Do remember in the nemonic the later CNP are coming from the CNP of compare and the later I specifying that we are using immediate addressing mode.
+[00:32:10.00] Slide Text: instruction Type: cPl d8 Fi ©  Gnesoacademy
+
+e ComPare Immediate with accumulator.
+
+e Flags are affected based on the Temporary Register’s content.
+
+v Cituation 1: Arde; Cy=0 & Z=0
+
+~ Ctuation 2: Acde) Cy=21& Z=0 A F
+
+~ Ctuation 3: A-de, Cy=0 & Z=1 B Cc
+ie] E
+H L
+
+= Bbits = «+ B bits »
+
+sie tenmer’s oo of BOBS
+[00:32:18.96] Professor:  Also size by CPID8 falls under the 2 byte long instructions category.
+[00:32:20.00] Slide Text: »
+Instruction Type: CPI d8
+© ComPare Immediate with accumulator.
+
+e Flags are affected based on the Temporary Registers content.
+
+wv Otuaton FT ‘A>d8; Cy=0 & Z=0
+
+~ Ctuation 2 Acde, Cy21& Z=0 A F
+~ Ctuation 3: A-dg, Cy=0 & Z=1 B c
+D E
+H L
+
+= Bbits = «+ B bits &
+
+siete’: fou of BOBS
+[00:32:25.54] Professor:  So in this session we covered the topics. First we understood the compare operation. Remember in order to perform the compare operation the microprocessor makes use of the subtraction operation.
+[00:32:30.00] Slide Text: Gg Topics
+
+4 Compare Operation
+
+@ Instruction Type: CMP R
+@ Instruction Type: CPI d8&
+[00:32:38.72] Professor:  However unlike subtraction in case of compare operation the result is updated inside the temporary register.
+[00:32:40.00] Slide Text: Gg Topics
+
+Compare Operation
+
+@ Instruction Type: CMP R
+@ Instruction Type: CPI d8&
+[00:32:47.86] Professor:  Thereafter we learnt about the instruction type CNP are which falls under the 1 byte long instructions category and finally we learnt about the instruction type CPID8 which falls under the 2 byte long instructions category.
+[00:32:50.00] Slide Text: Gg Topics
+
+{ Compare Operation
+
+@ Instruction Type; CMP R
+@ Instruction Type: CPI d8
+[00:33:00.00] Slide Text: gG Topics
+
+{ Compare Operation
+
+@ Instruction Type: CMP R
+@ Instruction Type: CPI ds.
+[00:33:02.74] Professor:  When we want to send the second print to the microprocessor via either any one of the general purpose registers or the memory location which will be pointed by the HL register pair we make use of the instruction type CNP are.
+[00:33:10.00] Slide Text: gG Topics
+
+Compare Operation
+
+@ Instruction Type: CMP R
+@ Instruction Type: CPI d8&
+[00:33:19.18] Professor:  On the other hand if we want to send the data as an 8 bit immediate data we will use the instruction type CPID8.
+[00:33:20.00] Slide Text: Gg Topics
+
+{ Compare Operation
+
+@ Instruction Type: CMP R
+@ Instruction Type: CPI d8
+[00:33:29.96] Professor:  Alright people that will be all for this session. In the next session we are going to learn about couple of more instruction types of the logical group of instructions. So I hope to see you in the next one. Thank you all for watching.
+[00:33:50.00] Slide Text: Get Ei (@nesoacademy
+Neso Academy
+App v (@nesoacademy
+
+@nesoacademy
